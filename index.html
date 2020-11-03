@@ -217,7 +217,6 @@
 
 	
 	
-    buildTable(myArray,myArray1)
 
 
     $("button").click(function() {
@@ -244,7 +243,7 @@
 
 
 
-	window.onload = function buildTable(data,data2){
+	 function buildTable(data,data2){
 		var table = document.getElementsByClassName('myTable')[0];
         
         for(var i = 0; i < data2.dataURL.length; i++){
@@ -305,5 +304,8 @@
             }            
         }
 	}
+
+    window.onload = buildTable(myArray,myArray1)
+
 
 </script>
