@@ -8,18 +8,16 @@ node {
 	stage('Postman test'){
        //  sh "curl -s -X POST https://api.telegram.org/bot1282407535:AAGyfDed5L_R7QLzRkXjX_yPJsGLXUaAn4E/sendMessage -d chat_id=-481038264 -d text='Start API Test.'"
 
-		git 'https://github.com/Slon-ua/analytics_board.git'
+		git 'https://github.com/Slon-ua/analytics.git'
 		sh 'npm install'
 		sh 'pwd'
-		sh 'ls -la '
-		sh 'ls -la ../'
-		sh 'ls -la ../Postman_Driveroo'
-		sh 'ls -la ../../'
-		sh 'ls -la ../../jobs/'
-		sh 'ls -la ../../jobs/Driveroo_Postman_Pipeline_JenkinsFile/'
-		sh 'ls -la ../../jobs/Driveroo_Postman_Pipeline_JenkinsFile/builds/'
-		sh 'ls -la ../../jobs/Driveroo_Postman_Pipeline_JenkinsFile/builds/69/'
-		sh 'ls -la ../../jobs/Driveroo_Postman_Pipeline_JenkinsFile/builds/69/'
+ 		sh 'ls -la '
+// 		sh 'ls -la ../'
+// 		sh 'ls -la ../Postman_Driveroo'
+// 		sh 'ls -la ../../'
+// 		sh 'ls -la ../../jobs/'
+// 		sh 'ls -la ../../jobs/analytics/'
+        sh 'ls -la ../../jobs/analytics/builds/'+env.BUILD_NUMBER
 
 		try {
 			sh 'npm run api-tests'
@@ -28,6 +26,9 @@ node {
 			currentBuild.result = 'FAILURE'
 		}
 		junit 'newman.xml'
+		
+		sh 'node main.js'
+
        //  sh "curl -s -X POST https://api.telegram.org/bot1282407535:AAGyfDed5L_R7QLzRkXjX_yPJsGLXUaAn4E/sendMessage -d chat_id=-481038264 -d text='Finish%20API%20Test.%0Ahttps://jenkins.driveroo.com/job/Postman_API_Pipeline/lastBuild/consoleText'"
     }
 }
