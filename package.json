@@ -1,0 +1,12 @@
+{
+  "name": "swapi",
+  "version": "1.0.0",
+  "description": "Project first",
+  "scripts": {
+    "api-tests": "newman run collection.json --reporters cli,junit --reporter-junit-export newman.xml"
+  },
+  "author": "Sergii Kokhan",
+  "dependencies": {
+    "newman": "^4.5.7"
+  }
+}

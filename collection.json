@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "e56621aa-d285-4b21-af1e-49d5e7bb0845",
+		"name": "test_while",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateJSON",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "19984071-c19f-4305-bb12-6ab99323c3ae",
+						"exec": [
+							"let responseJson2 = pm.response.json();",
+							"",
+							"//pm.globals.set(\"JSON_Var\",);",
+							"",
+							"",
+							"const postRequest3 = {",
+							"    url:\"https://sandbox.driveroo.com/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583?page=\",",
+							"  //url: \"https://sandbox.driveroo.com/api/clockwork/\"+pm.globals.get(\"API_keys\")+\"?page=\",",
+							"    method: 'GET',",
+							"  header: {",
+							"    'Content-Type': 'application/json',",
+							"    'X-Foo': 'bar'",
+							"  },",
+							"  body: {",
+							"  }",
+							"};",
+							"",
+							"",
+							"//let JSONParse ={\"data\":[], \"status_code\": [], \"URL\": [], \"name\": [], \"duration\": []}",
+							"let JSONParse={\"data\":[]} ;",
+							"",
+							"",
+							"let merged = {dataMethod:{},dataURL:{}};",
+							"postman.setGlobalVariable(\"globalFunction\", (parameters) => { ",
+							"        pm.sendRequest(postRequest3.url+parameters, (error, response) => {",
+							"            // console.log(\"Start globalFunction#1 with veriables - \"+parameters);",
+							"",
+							"            //  console.log(\"-------------------0--------------------------\");",
+							"            //  console.log(response.json().data);",
+							"        ",
+							"          //  console.log(error ? error : response.json());",
+							"",
+							"            let responseJson = response.json().data;",
+							"            // console.log(responseJson.length);",
+							"",
+							"            for (var i = 0; i < responseJson.length; i++) {",
+							"                if (!merged.dataMethod[responseJson[i].method]) {",
+							"",
+							"                    merged.dataMethod[responseJson[i].method]= {URL: responseJson[i].url, data_id:{[responseJson[i].id]: [responseJson[i].method,responseJson[i].duration]}, user_id:{[responseJson[i].user_id]: 1} ,duration: responseJson[i].duration, count :1,totalDuration:responseJson[i].duration,totalUser:1,totalDuration:responseJson[i].duration};",
+							"                    }",
+							"                    ",
+							"                if (!merged.dataURL[responseJson[i].url]) {",
+							"",
+							"                    merged.dataURL[responseJson[i].url]= {URL: responseJson[i].url, data_id:{[responseJson[i].id]: responseJson[i].duration}, user_id:{[responseJson[i].user_id]: 1} ,duration: responseJson[i].duration, count :1,totalDuration:responseJson[i].duration,totalUser:1,totalDuration:responseJson[i].duration};",
+							"",
+							"                } else {",
+							"                    if (!merged.dataURL[responseJson[i].id]){",
+							"                        merged.dataURL[responseJson[i].url].data_id[responseJson[i].id] = responseJson[i].duration;                        ",
+							"                    }",
+							"                    if (merged.dataURL[responseJson[i].user_id]){",
+							"                        merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id] = 0;",
+							"                        merged.dataURL[responseJson[i].url].totalUser+=1;",
+							"                    }",
+							"                    if (merged.dataURL[responseJson[i].url].user_id) {",
+							"                        let qwe = merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id];",
+							"                        if (!qwe){",
+							"                            qwe=1;",
+							"                            merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id] = qwe;",
+							"                        }",
+							"                        else{",
+							"                            merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id] = Number(merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id])+1;",
+							"                        }",
+							"                    }",
+							"                    merged.dataURL[responseJson[i].url].count =Number(merged.dataURL[responseJson[i].url].count)+1;",
+							"                    merged.dataURL[responseJson[i].url].totalDuration = (Number(merged.dataURL[responseJson[i].url].totalDuration) + Number(responseJson[i].duration)).toFixed(2);",
+							"                }",
+							"            }",
+							"            // console.log(\"-------------------1--------------------------\");",
+							"            // console.log(merged);",
+							"            // console.log(\"-------------------1.1--------------------------\");",
+							"            ",
+							"            JSONParse.data.push(merged)",
+							"            // console.log(JSONParse);",
+							"            // console.log(pm.globals.get(\"JSON_Var\"),merged);",
+							"",
+							"            // console.log(\"-------------------1.2--------------------------\");",
+							"            pm.globals.set(\"JSON_Var\",merged);",
+							"          //   console.log(pm.globals.get(\"JSON_Var\"));",
+							"          ",
+							"            responseJson2 = pm.response.json();",
+							"          //  console.log(\"!!!!!!!!!!!!!!!!!!!!!!!!\");",
+							"          //  console.log(responseJson2);",
+							"",
+							"            first_date_arr = datetime_regex.exec(responseJson2.data[29].time);",
+							"            first_datetime = first_date_arr[3];",
+							"",
+							"            // fileObjectName = new File(\"/Users/admin/Downloads/Test_file/test.json\");",
+							"            // fileObjectName.write(string);",
+							"",
+							"// console.log(\"===================================================================\");",
+							"// console.log(merged);",
+							"// var result_arr = [{\"dataMethod\":{},\"dataURL\":{}}];",
+							"// for (var post in merged) {",
+							"//     var b = merged[post];",
+							"//     console.log(b);",
+							"//     for (var post2 in b){",
+							"//         var p = b[post2];",
+							"",
+							"//         result_arr.push([p.data_id, p.duration, p.URL, p.count, p.user_id,p.totalDuration,p.totalUser]);",
+							"//         // result_arr.dataMethod.push([p.data_id, p.duration, p.URL, p.count, p.user_id,p.totalDuration,p.totalUser]);",
+							"//         console.log(result_arr);",
+							"",
+							"//     }",
+							"// }",
+							"// console.log(\"===================================================================\");",
+							"",
+							"// console.log(merged);",
+							"// console.log(result_arr);",
+							"",
+							"// console.log(\"===================================================================\");",
+							"",
+							"        }); ",
+							"});",
+							"",
+							"",
+							"console.log(\"############   \"+responseJson2.data[29].time+\"    ############   \"+responseJson2.data.length);",
+							"let datetime_regex = /(\\d{4})-(\\d{2})-(\\d{2})/;",
+							"let first_date_arr = datetime_regex.exec(responseJson2.data[29].time);",
+							"let first_datetime = first_date_arr[3];",
+							"let d = new Date().getDate()+2;",
+							"console.log(\"--- \"+first_date_arr+\" --- \"+first_datetime+\" --- \"+d);",
+							"",
+							"let i = 1;",
+							"// while (first_datetime<d){",
+							"//     console.log(\"!!!!!!!!!!!!!!!!!!!!!!!!\");",
+							"//     //eval(globals.globalFunction)(i);",
+							"//     if (i>10){",
+							"//     first_datetime=Number(first_datetime)+1;",
+							"//     }",
+							"//     console.log(\" --- \"+first_datetime+\" --- \"+d);",
+							"//         console.log(\"------------------- cikle = \"+i+\"--------------------------\");",
+							"//     i++;",
+							"// }",
+							"",
+							"for (let i = 100; i<=101; ++i){",
+							"    eval(globals.globalFunction)(i);",
+							"    console.log(\"------------------- cikle = \"+i+\"--------------------------\");",
+							"}",
+							"",
+							"// let result_arr = [];",
+							"// for (let post in merged) {",
+							"//     let p = merged[post];",
+							"//     result_arr.push([p.id, p.duration, p.likes, p.count, p.user_id]);",
+							"// }",
+							"// console.log(\"===================================================================\");",
+							"",
+							"// console.log(merged);",
+							"// console.log(result_arr);",
+							"",
+							"// console.log(\"===================================================================\");",
+							"",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data[0].id).to.be.a(\"string\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox.driveroo.com/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583?page=24&sort=id&order=desc&id=&user=&time=&url=&ip=&status=&method=&duration=",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"driveroo",
+						"com"
+					],
+					"path": [
+						"api",
+						"clockwork",
+						"024e5916-d002-47e8-83f9-15ba0860c583"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "24"
+						},
+						{
+							"key": "sort",
+							"value": "id"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "id",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"value": ""
+						},
+						{
+							"key": "time",
+							"value": ""
+						},
+						{
+							"key": "url",
+							"value": ""
+						},
+						{
+							"key": "ip",
+							"value": ""
+						},
+						{
+							"key": "status",
+							"value": ""
+						},
+						{
+							"key": "method",
+							"value": ""
+						},
+						{
+							"key": "duration",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{sand}}/api/clockwork/{{API_keys}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e9b689e-64ca-4efc-90d6-1741ff2643e9",
+						"exec": [
+							"console.log(\"==============1\");",
+							"console.log(pm.globals.get(\"JSON_Var\"));",
+							"console.log(\"1==============\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox.driveroo.com/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"driveroo",
+						"com"
+					],
+					"path": [
+						"api",
+						"clockwork",
+						"024e5916-d002-47e8-83f9-15ba0860c583"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
