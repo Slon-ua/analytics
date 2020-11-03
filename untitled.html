@@ -1,0 +1,309 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="./getJSON.js"></script>-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script>
+    var myArray = [
+        {'name':'Michael', 'age':'30', 'birthdate':'11/10/1989'},
+        {'name':'Mila', 'age':'32', 'birthdate':'10/1/1989'},
+        {'name':'Paul', 'age':'29', 'birthdate':'10/14/1990'},
+        {'name':'Dennis', 'age':'25', 'birthdate':'11/29/1993'},
+        {'name':'Tim', 'age':'27', 'birthdate':'3/12/1991'},
+        {'name':'Erik', 'age':'24', 'birthdate':'10/31/1995'},
+    ];
+
+    var myArray1 = {
+    "dataMethod": {
+        "POST": {
+            "URL": "/providerApi/requestStatusCheck",
+            "data_id": {
+                "3573147": [
+                    {
+                        "0": "3573147"
+                    },
+                    {
+                        "2": "POST"
+                    },
+                    {
+                        "3": "280.4"
+                    }
+                ],
+                "3573147": [
+                    {
+                        "0": "3573147"
+                    },
+                    {
+                        "2": "POST"
+                    },
+                    {
+                        "3": "280.4"
+                    }
+                ]
+            },
+            "user_id": {
+                "346": 1,
+                "346": 1,
+                "346": 1
+            },
+            "duration": "280.4",
+            "count": 1,
+            "totalDuration": "280.4",
+            "totalUser": 2
+
+        },
+        "GET": {
+            "URL": "/providerApi/userdetails",
+            "data_id": {
+                "3573143": [
+                    {
+                        "0": "GET"
+                    },
+                    {
+                        "1": "210.8"
+                    }
+                ]
+            },
+            "user_id": {
+                "346": 1
+            },
+            "duration": "210.8",
+            "count": 1,
+            "totalDuration": "210.8",
+            "totalUser": 2
+
+        }
+    },
+    "dataURL": [
+        {
+            "URL": "/providerApi/requestStatusCheck",
+             "data_id": [
+                {"data_id":"3573093", "duration":"231.0","method":"GET"},
+                {"data_id":"3573101", "duration":"245.1","method":"GET"},
+                {"data_id":"3573108", "duration":"245.9","method":"GET"},
+                {"data_id":"3573116", "duration":"474.1","method":"GET"},
+                {"data_id":"3573124", "duration":"259.4","method":"GET"},
+                {"data_id":"3573139", "duration":"269.8","method":"GET"},
+                {"data_id":"3573147", "duration":"280.4","method":"GET"}
+            ],
+            "user_id": [
+                {"user_id":"57", "count":"2"},
+                {"user_id":"23", "count":"3"},
+                {"user_id":"31", "count":"4"}
+            ],
+            "duration": "280.4",
+            "count": 9,
+            "totalDuration": "2005.70",
+            "totalUser": 3
+        },
+         {
+            "URL": "/providerApi/availableUpdate",
+            "data_id": [
+                {"data_id":"3573096", "duration":"217.9","method":"GET"},
+                {"data_id":"3573104", "duration":"274.1","method":"GET"},
+                {"data_id":"3573106", "duration":"220.5","method":"GET"},
+                {"data_id":"3573121", "duration":"198.8","method":"GET"},
+                {"data_id":"3573129", "duration":"281.2","method":"GET"},
+                {"data_id":"3573144", "duration":"202.8","method":"GET"}
+            ],
+            "user_id": [
+                {"user_id":"57", "count":"2"},
+                {"user_id":"23", "count":"3"},
+                {"user_id":"31", "count":"3"}
+            ],
+            "duration": "202.8",
+            "count": 8,
+            "totalDuration": "1395.30",
+            "totalUser": 3
+        },
+         {
+            "URL": "/providerApi/incomingRequest",
+            "data_id": [
+                {"data_id":"3573088", "duration":"227.3","method":"GET"},
+                {"data_id":"3573094", "duration":"232.4","method":"GET"},
+                {"data_id":"3573102", "duration":"227.4","method":"GET"},
+                {"data_id":"3573110", "duration":"224.4","method":"GET"},
+                {"data_id":"3573119", "duration":"234.9","method":"GET"},
+                {"data_id":"3573127", "duration":"204.8","method":"GET"},
+                {"data_id":"3573142", "duration":"200.3","method":"GET"}
+            ],
+            "user_id": [
+                {"user_id":"57", "count":"2"},
+                {"user_id":"23", "count":"3"},
+                {"user_id":"31", "count":"2"}
+            ],
+            "duration": "200.3",
+            "count": 7,
+            "totalDuration": "1551.50",
+            "totalUser": 3
+        }
+        ]
+    
+};
+</script>
+
+<style>
+    th{
+        color:#fff;
+    }
+
+    .toggle{    display: none;
+    }
+
+    .foo td {
+        padding: 1em;
+        border: 1px solid black;
+    }
+    .myButton {
+        background:url(./arrow.png) no-repeat;
+        cursor:pointer;
+        width: 20%;
+        height: 20%;
+    }
+    .table td, .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+    .bg-info{
+        background-color: #17a2b8!important;
+    }
+
+</style>
+
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th></th>
+        <th>URL</th>
+        <th>totalUser</th>
+        <th>totalRequest</th>
+        <th>totalDuration</th>
+
+    </tr>
+
+    <tbody class="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+
+// let text = 'true';
+//     const getTxt = async () => {
+//         const res = await fetch('/consoleText.txt');
+//          text = await res.text()
+//         console.log("====================");
+
+//         console.log(text);
+//     }
+// getTxt();
+
+//     //const fs = require('fs');
+//     // var fs = require('fs');
+//     // //var fs = 42;
+
+
+//     // fs.readFile('./consoleText.txt', 'utf-8', (err, data) => {
+//     //   if (err) {
+//     //     throw err;
+//     //   }
+//     //       console.log("====================");
+
+//     //   console.log(data);
+//     // });
+
+//     console.log(text);
+
+
+	
+	
+    window.onload = buildTable(myArray,myArray1)
+
+
+    $("button").click(function() {
+
+        let fired_button = $(this).val();
+
+        let arrayClass = fired_button.split(',');
+
+        $('.'+arrayClass[0]).toggle();
+        
+        let elem1 = document.getElementsByClassName(arrayClass[1])[0];
+        let theCSSprop1 = window.getComputedStyle(elem1,null).getPropertyValue("display");
+
+        let elem2 = document.getElementsByClassName(arrayClass[2])[0];
+        let theCSSprop2 = window.getComputedStyle(elem2,null).getPropertyValue("display");
+
+            if (theCSSprop1=='table-row'){
+                $('.toggle.'+arrayClass[1]).toggle();
+            }
+            if (theCSSprop2=='table-row'){
+                $('.toggle.'+arrayClass[2]).toggle();
+            }       
+    });
+
+
+
+	function buildTable(data,data2){
+		var table = document.getElementsByClassName('myTable')[0];
+        
+        for(var i = 0; i < data2.dataURL.length; i++){
+            var row =   `<tr class="foo" id="b">
+                            <!--<td><button class="" value="b`+i+`,d`+i+`,c`+i+`">"+"</button></td>-->
+                            <td><button class="" value="b`+i+`,d`+i+`,c`+i+`">"+"</button></td>
+                            <td>${data2.dataURL[i].URL}</td>
+                            <td>${data2.dataURL[i].totalUser}</td>
+                            <td>${data2.dataURL[i].count}</td>
+                            <td>${data2.dataURL[i].totalDuration}</td>
+                        </tr>
+                      
+                        <tr  class="bg-info toggle b`+i+`">                                  
+                            <th></th>
+                            <th><button class="" value="d`+i+`">"+"</button></th>
+                            <th>User_id</th>
+                            <th>CountRequest</th>
+                            <th></th>
+                        </tr>`
+                       
+            table.innerHTML += row;
+
+
+
+            for(var j = 0; j < data2.dataURL[i].user_id.length; j++){  
+                var row = `<tr class="toggle d`+i+`">
+                                    <td></td>
+                                    <td></td>
+                                    <td>${data2.dataURL[i].user_id[j].user_id}</td>
+                                    <td>${data2.dataURL[i].user_id[j].count}</td>
+                                </tr>`
+
+                table.innerHTML += row;
+
+            }              
+
+            var row =`<tr  class="bg-info toggle b`+i+` ">  
+                        <th></th>
+                        <th><button class="" value="c`+i+`">"+"</button></th>
+                        <th>Data_id</th>
+                        <th>Method</th>
+                        <th>Duration</th>
+                      </tr>`
+
+            table.innerHTML += row;
+
+            for(var j = 0; j < data2.dataURL[i].data_id.length; j++){  
+                 var row =   `<tr class="toggle c`+i+`">
+                                <td></td>
+                                <td></td>
+                                <td><a href="https://sandbox.driveroo.com/admin/clockwork/${data2.dataURL[i].data_id[j].data_id}" target="_blank">${data2.dataURL[i].data_id[j].data_id}</td>
+                                <td>${data2.dataURL[i].data_id[j].method}</td>
+                               <td>${data2.dataURL[i].data_id[j].duration}</td>
+                            </tr>`
+
+            table.innerHTML += row;
+
+            }            
+        }
+	}
+
+</script>
