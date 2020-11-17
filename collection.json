@@ -108,7 +108,7 @@
 							"            };",
 							"            // console.log( resultArr);",
 							"            pm.globals.set(\"JSON_Var\",resultArr);",
-							"             console.log(pm.globals.get(\"JSON_Var\"));",
+							"            //  console.log(pm.globals.get(\"JSON_Var\"));",
 							"",
 							"            // JSONParse.data.push(merged)",
 							"",

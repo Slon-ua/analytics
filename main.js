@@ -36,7 +36,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 	// console.log(data1);
 
 
-	 let text ="{"+ data.split("} } }")[0].split("│ {")[1] +"} } }" ;
+	 let text ="{"+ data.split("} ] }")[0].split("│ {")[1] +"} ] }" ;
 
 	function replaceAll(str, find1, replace1) {
     	return str.replace(new RegExp(find1, 'g'), replace1);
