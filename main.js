@@ -82,7 +82,7 @@ function fileHandler3(data){
 
 
     fs.truncate("./JSONvar.js", 0, function() {
-        fs.writeFile("./JSONvar.js", "var myArray1 = " + data +";\n", function (err) {
+        fs.writeFile("./JSONvar.js", "var myArray404 = " + data +";\n", function (err) {
             if (err) {
                 return console.log("Error writing file: " + err);
             }
