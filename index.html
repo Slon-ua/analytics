@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-         <script src="./JSONvar.js"></script>
+        <!-- <script src="./getJSON.js"></script>-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
 
@@ -45,7 +45,7 @@
                 
             </tbody>
         </table>
-<!-- <script>
+<script>
             var myArray = [
                 {'name':'Michael', 'age':'30', 'birthdate':'11/10/1989'},
                 {'name':'Mila', 'age':'32', 'birthdate':'10/1/1989'},
@@ -55,144 +55,138 @@
                 {'name':'Erik', 'age':'24', 'birthdate':'10/31/1995'},
             ];
 
-            var myArray1 = {
-            "dataMethod": {
-                "POST": {
-                    "URL": "/providerApi/requestStatusCheck",
-                    "data_id": {
-                        "3573147": [
-                            {
-                                "0": "3573147"
-                            },
-                            {
-                                "2": "POST"
-                            },
-                            {
-                                "3": "280.4"
-                            }
-                        ],
-                        "3573147": [
-                            {
-                                "0": "3573147"
-                            },
-                            {
-                                "2": "POST"
-                            },
-                            {
-                                "3": "280.4"
-                            }
-                        ]
-                    },
-                    "user_id": {
-                        "346": 1,
-                        "346": 1,
-                        "346": 1
-                    },
-                    "duration": "280.4",
-                    "count": 1,
-                    "totalDuration": "280.4",
-                    "totalUser": 2
+            var myArray1 = {"dataMethod":[{"URL":"/currentsetting.htm","data_id":{"3682946":["GET","203.6"]},"user_id":{"null":1},"duration":"203.6","count":1,"totalDuration":"203.6","totalUser":1,"maxDuration":"203.6"},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/users","data_id":{"3682812":["DELETE","205.0"]},"user_id":{"2853":1},"duration":"205.0","count":1,"totalDuration":"205.0","totalUser":1,"maxDuration":"205.0"},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/users","data_id":{"3682811":["POST","206.5"]},"user_id":{"2853":1},"duration":"206.5","count":1,"totalDuration":"206.5","totalUser":1,"maxDuration":"206.5"}],"dataURL":[{"URL":"/currentsetting.htm","data_id":{"3679746":"198.4","3679864":"196.4","3680706":"198.2","3680716":"202.7","3682946":"203.6"},"user_id":{"null":5},"duration":"203.6","count":5,"totalDuration":"999.30","totalUser":1,"maxDuration":"203.6"},{"URL":"/api/clockwork/undefined","data_id":{"3682906":"228.6","3682907":"267.6","3682908":"294.1","3682909":"313.6","3682910":"213.7","3682911":"204.6"},"user_id":{"33":2,"null":4},"duration":"204.6","count":6,"totalDuration":"1522.20","totalUser":1,"maxDuration":313.6},{"URL":"/userApi/fleets/work-order/5d750090-229c-11eb-9308-e751c4620f38","data_id":{"3682838":"190.2"},"user_id":{"null":1},"duration":"190.2","count":1,"totalDuration":"190.2","totalUser":1,"maxDuration":"190.2"},{"URL":"/userApi/fleets/work-order/b6d093c0-229b-11eb-b51c-9b558ed03ba9","data_id":{"3682837":"201.1"},"user_id":{"null":1},"duration":"201.1","count":1,"totalDuration":"201.1","totalUser":1,"maxDuration":"201.1"},{"URL":"/owa/auth/logon.aspx","data_id":{"3682835":"196.8"},"user_id":{"null":1},"duration":"196.8","count":1,"totalDuration":"196.8","totalUser":1,"maxDuration":"196.8"},{"URL":"/test","data_id":{"3682833":"265.5"},"user_id":{"null":1},"duration":"265.5","count":1,"totalDuration":"265.5","totalUser":1,"maxDuration":"265.5"},{"URL":"/userApi/fleets/work-order/0d440c50-f82c-11ea-9ba9-79990f4e24d7","data_id":{"3681952":"185.9","3682813":"217.1"},"user_id":{"2853":2},"duration":"217.1","count":2,"totalDuration":"403.00","totalUser":1,"maxDuration":"217.1"},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/users","data_id":{"3681950":"208.9","3681951":"205.3","3682811":"206.5","3682812":"205.0"},"user_id":{"2853":4},"duration":"205.0","count":4,"totalDuration":"825.70","totalUser":1,"maxDuration":208.9},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/cars","data_id":{"3681948":"217.2","3681949":"206.9","3682809":"208.5","3682810":"206.0"},"user_id":{"2853":4},"duration":"206.0","count":4,"totalDuration":"838.60","totalUser":1,"maxDuration":217.2},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/cars/attach","data_id":{"3681947":"215.1","3682808":"208.2"},"user_id":{"2853":2},"duration":"208.2","count":2,"totalDuration":"423.30","totalUser":1,"maxDuration":215.1},{"URL":"/userApi/fleets/users/2770/delete","data_id":{"3681934":"215.8","3682795":"213.3"},"user_id":{"2853":2},"duration":"213.3","count":2,"totalDuration":"429.10","totalUser":1,"maxDuration":215.8},{"URL":"/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583/1501393","data_id":{"3682776":"206.7"},"user_id":{"21":1},"duration":"206.7","count":1,"totalDuration":"206.7","totalUser":1,"maxDuration":"206.7"},{"URL":"","data_id":{"3680707":"197.7"},"user_id":{"null":1},"duration":"197.7","count":1,"totalDuration":"197.7","totalUser":1,"maxDuration":"197.7"},{"URL":"/wp-content/plugins/wp-file-manager/readme.txt","data_id":{"3680606":"204.7"},"user_id":{"null":1},"duration":"204.7","count":1,"totalDuration":"204.7","totalUser":1,"maxDuration":"204.7"},{"URL":"/api/jsonws/invoke","data_id":{"3680603":"194.5"},"user_id":{"null":1},"duration":"194.5","count":1,"totalDuration":"194.5","totalUser":1,"maxDuration":"194.5"},{"URL":"/","data_id":{"3680601":"193.4","3680602":"194.3"},"user_id":{"null":2},"duration":"194.3","count":2,"totalDuration":"387.70","totalUser":1,"maxDuration":"194.3"},{"URL":"/api/clockwork/%7BapiKey%7D","data_id":{"3680288":"199.1","3680289":"203.0","3680290":"785.8"},"user_id":{"null":3},"duration":"785.8","count":3,"totalDuration":"1187.90","totalUser":1,"maxDuration":"785.8"}]};
 
-                },
-                "GET": {
-                    "URL": "/providerApi/userdetails",
-                    "data_id": {
-                        "3573143": [
-                            {
-                                "0": "GET"
-                            },
-                            {
-                                "1": "210.8"
-                            }
-                        ]
-                    },
-                    "user_id": {
-                        "346": 1
-                    },
-                    "duration": "210.8",
-                    "count": 1,
-                    "totalDuration": "210.8",
-                    "totalUser": 2
+        //     var myArray1 = {
+        //     "dataMethod": {
+        //         "POST": {
+        //             "URL": "/providerApi/requestStatusCheck",
+        //             "data_id": {
+        //                 "3573147": [
+        //                     {
+        //                         "0": "3573147"
+        //                     },
+        //                     {
+        //                         "2": "POST"
+        //                     },
+        //                     {
+        //                         "3": "280.4"
+        //                     }
+        //                 ],
+        //                 "3573147": [
+        //                     {
+        //                         "0": "3573147"
+        //                     },
+        //                     {
+        //                         "2": "POST"
+        //                     },
+        //                     {
+        //                         "3": "280.4"
+        //                     }
+        //                 ]
+        //             },
+        //             "user_id": {
+        //                 "346": 1,
+        //                 "346": 1,
+        //                 "346": 1
+        //             },
+        //             "duration": "280.4",
+        //             "count": 1,
+        //             "totalDuration": "280.4",
+        //             "totalUser": 2
 
-                }
-            },
-            "dataURL": [
-                {
-                    "URL": "/providerApi/requestStatusCheck",
-                     "data_id": [
-                        {"data_id":"3573093", "duration":"231.0","method":"GET"},
-                        {"data_id":"3573101", "duration":"245.1","method":"GET"},
-                        {"data_id":"3573108", "duration":"245.9","method":"GET"},
-                        {"data_id":"3573116", "duration":"474.1","method":"GET"},
-                        {"data_id":"3573124", "duration":"259.4","method":"GET"},
-                        {"data_id":"3573139", "duration":"269.8","method":"GET"},
-                        {"data_id":"3573147", "duration":"280.4","method":"GET"}
-                    ],
-                    "user_id": [
-                        {"user_id":"57", "count":"2"},
-                        {"user_id":"23", "count":"3"},
-                        {"user_id":"31", "count":"4"}
-                    ],
-                    "duration": "280.4",
-                    "count": 9,
-                    "totalDuration": "2005.70",
-                    "totalUser": 3
-                },
-                 {
-                    "URL": "/providerApi/availableUpdate",
-                    "data_id": [
-                        {"data_id":"3573096", "duration":"217.9","method":"GET"},
-                        {"data_id":"3573104", "duration":"274.1","method":"GET"},
-                        {"data_id":"3573106", "duration":"220.5","method":"GET"},
-                        {"data_id":"3573121", "duration":"198.8","method":"GET"},
-                        {"data_id":"3573129", "duration":"281.2","method":"GET"},
-                        {"data_id":"3573144", "duration":"202.8","method":"GET"}
-                    ],
-                    "user_id": [
-                        {"user_id":"57", "count":"2"},
-                        {"user_id":"23", "count":"3"},
-                        {"user_id":"31", "count":"3"}
-                    ],
-                    "duration": "202.8",
-                    "count": 8,
-                    "totalDuration": "1395.30",
-                    "totalUser": 3
-                },
-                 {
-                    "URL": "/providerApi/incomingRequest",
-                    "data_id": [
-                        {"data_id":"3573088", "duration":"227.3","method":"GET"},
-                        {"data_id":"3573094", "duration":"232.4","method":"GET"},
-                        {"data_id":"3573102", "duration":"227.4","method":"GET"},
-                        {"data_id":"3573110", "duration":"224.4","method":"GET"},
-                        {"data_id":"3573119", "duration":"234.9","method":"GET"},
-                        {"data_id":"3573127", "duration":"204.8","method":"GET"},
-                        {"data_id":"3573142", "duration":"200.3","method":"GET"}
-                    ],
-                    "user_id": [
-                        {"user_id":"57", "count":"2"},
-                        {"user_id":"23", "count":"3"},
-                        {"user_id":"31", "count":"2"}
-                    ],
-                    "duration": "200.3",
-                    "count": 7,
-                    "totalDuration": "1551.50",
-                    "totalUser": 3
-                }
-                ]
+        //         },
+        //         "GET": {
+        //             "URL": "/providerApi/userdetails",
+        //             "data_id": {
+        //                 "3573143": [
+        //                     {
+        //                         "0": "GET"
+        //                     },
+        //                     {
+        //                         "1": "210.8"
+        //                     }
+        //                 ]
+        //             },
+        //             "user_id": {
+        //                 "346": 1
+        //             },
+        //             "duration": "210.8",
+        //             "count": 1,
+        //             "totalDuration": "210.8",
+        //             "totalUser": 2
+
+        //         }
+        //     },
+        //     "dataURL": [
+        //         {
+        //             "URL": "/providerApi/requestStatusCheck",
+        //              "data_id": [
+        //                 {"data_id":"3573093", "duration":"231.0","method":"GET"},
+        //                 {"data_id":"3573101", "duration":"245.1","method":"GET"},
+        //                 {"data_id":"3573108", "duration":"245.9","method":"GET"},
+        //                 {"data_id":"3573116", "duration":"474.1","method":"GET"},
+        //                 {"data_id":"3573124", "duration":"259.4","method":"GET"},
+        //                 {"data_id":"3573139", "duration":"269.8","method":"GET"},
+        //                 {"data_id":"3573147", "duration":"280.4","method":"GET"}
+        //             ],
+        //             "user_id": [
+        //                 {"user_id":"57", "count":"2"},
+        //                 {"user_id":"23", "count":"3"},
+        //                 {"user_id":"31", "count":"4"}
+        //             ],
+        //             "duration": "280.4",
+        //             "count": 9,
+        //             "totalDuration": "2005.70",
+        //             "totalUser": 3
+        //         },
+        //          {
+        //             "URL": "/providerApi/availableUpdate",
+        //             "data_id": [
+        //                 {"data_id":"3573096", "duration":"217.9","method":"GET"},
+        //                 {"data_id":"3573104", "duration":"274.1","method":"GET"},
+        //                 {"data_id":"3573106", "duration":"220.5","method":"GET"},
+        //                 {"data_id":"3573121", "duration":"198.8","method":"GET"},
+        //                 {"data_id":"3573129", "duration":"281.2","method":"GET"},
+        //                 {"data_id":"3573144", "duration":"202.8","method":"GET"}
+        //             ],
+        //             "user_id": [
+        //                 {"user_id":"57", "count":"2"},
+        //                 {"user_id":"23", "count":"3"},
+        //                 {"user_id":"31", "count":"3"}
+        //             ],
+        //             "duration": "202.8",
+        //             "count": 8,
+        //             "totalDuration": "1395.30",
+        //             "totalUser": 3
+        //         },
+        //          {
+        //             "URL": "/providerApi/incomingRequest",
+        //             "data_id": [
+        //                 {"data_id":"3573088", "duration":"227.3","method":"GET"},
+        //                 {"data_id":"3573094", "duration":"232.4","method":"GET"},
+        //                 {"data_id":"3573102", "duration":"227.4","method":"GET"},
+        //                 {"data_id":"3573110", "duration":"224.4","method":"GET"},
+        //                 {"data_id":"3573119", "duration":"234.9","method":"GET"},
+        //                 {"data_id":"3573127", "duration":"204.8","method":"GET"},
+        //                 {"data_id":"3573142", "duration":"200.3","method":"GET"}
+        //             ],
+        //             "user_id": [
+        //                 {"user_id":"57", "count":"2"},
+        //                 {"user_id":"23", "count":"3"},
+        //                 {"user_id":"31", "count":"2"}
+        //             ],
+        //             "duration": "200.3",
+        //             "count": 7,
+        //             "totalDuration": "1551.50",
+        //             "totalUser": 3
+        //         }
+        //         ]
             
-        };
+        // };
         </script>
- -->        <script>
-    var myArray = [
-                {'name':'Michael', 'age':'30', 'birthdate':'11/10/1989'},
-                {'name':'Mila', 'age':'32', 'birthdate':'10/1/1989'},
-                {'name':'Paul', 'age':'29', 'birthdate':'10/14/1990'},
-                {'name':'Dennis', 'age':'25', 'birthdate':'11/29/1993'},
-                {'name':'Tim', 'age':'27', 'birthdate':'3/12/1991'},
-                {'name':'Erik', 'age':'24', 'birthdate':'10/31/1995'},
-            ];
-// var myArray1 = {"dataMethod":[{"URL":"/userApi/fleets/work-order/0d440c50-f82c-11ea-9ba9-79990f4e24d7","data_id":{"3679710":["GET","187.4"]},"user_id":{"2853":1},"duration":"187.4","count":1,"totalDuration":"187.4","totalUser":1,"maxDuration":"187.4"},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/users","data_id":{"3679709":["DELETE","203.2"]},"user_id":{"2853":1},"duration":"203.2","count":1,"totalDuration":"203.2","totalUser":1,"maxDuration":"203.2"},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/users","data_id":{"3679708":["POST","206.0"]},"user_id":{"2853":1},"duration":"206.0","count":1,"totalDuration":"206.0","totalUser":1,"maxDuration":"206.0"}],"dataURL":[{"URL":"/userApi/fleets/work-order/0d440c50-f82c-11ea-9ba9-79990f4e24d7","data_id":{"3678011":"188.3","3678252":"187.4","3678713":"184.8","3678744":"183.5","3678859":"184.3","3678918":"187.3","3679281":"183.9","3679340":"185.1","3679410":"188.4","3679481":"185.8","3679710":"187.4"},"user_id":{"2853":11},"duration":"187.4","count":11,"totalDuration":"2046.20","totalUser":1,"maxDuration":188.4},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/users","data_id":{"3678009":"211.5","3678010":"205.1","3678250":"206.3","3678251":"224.8","3678709":"509.6","3678711":"206.4","3678741":"201.4","3678742":"254.6","3678857":"208.9","3678858":"199.4","3678916":"206.5","3678917":"210.2","3679279":"205.0","3679280":"208.4","3679338":"215.3","3679339":"222.4","3679408":"207.2","3679409":"206.0","3679479":"214.6","3679480":"204.3","3679708":"206.0","3679709":"203.2"},"user_id":{"2853":22},"duration":"203.2","count":22,"totalDuration":"4937.10","totalUser":1,"maxDuration":509.6},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/cars","data_id":{"3678007":"205.9","3678008":"209.7","3678248":"231.8","3678249":"209.5","3678703":"233.1","3678705":"201.7","3678737":"204.6","3678739":"207.5","3678855":"202.1","3678856":"203.8","3678914":"210.3","3678915":"205.8","3679277":"203.6","3679278":"203.5","3679336":"220.0","3679337":"209.6","3679406":"215.0","3679407":"209.0","3679477":"205.9","3679478":"204.9","3679706":"204.8","3679707":"206.0"},"user_id":{"2853":22},"duration":"206.0","count":22,"totalDuration":"4608.10","totalUser":1,"maxDuration":233.1},{"URL":"/userApi/fleets/groups/%7Bgroup_id%7D/cars/attach","data_id":{"3678006":"206.6","3678247":"332.3","3678700":"208.1","3678734":"210.5","3678854":"208.5","3678913":"201.7","3679276":"237.7","3679335":"215.5","3679405":"214.6","3679476":"207.0","3679705":"206.2"},"user_id":{"2853":11},"duration":"206.2","count":11,"totalDuration":"2448.70","totalUser":1,"maxDuration":332.3},{"URL":"/userApi/fleets/users/2770/delete","data_id":{"3677990":"207.2","3678234":"233.3","3678673":"225.5","3678712":"210.8","3678841":"211.7","3678900":"206.2","3679263":"224.4","3679322":"304.3","3679392":"304.9","3679460":"452.9","3679692":"238.6"},"user_id":{"2853":11},"duration":"238.6","count":11,"totalDuration":"2819.80","totalUser":1,"maxDuration":452.9},{"URL":"/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583/1496774","data_id":{"3679441":"197.1","3679673":"200.5"},"user_id":{"21":2},"duration":"200.5","count":2,"totalDuration":"397.60","totalUser":1,"maxDuration":"200.5"},{"URL":"/api/clockwork/7943e46b-4414-44b5-94d2-cdf187d8ae7c","data_id":{"3679657":"213.4"},"user_id":{"33":1},"duration":"213.4","count":1,"totalDuration":"213.4","totalUser":1,"maxDuration":"213.4"},{"URL":"/currentsetting.htm","data_id":{"3679636":"236.8","3679640":"213.0","3679642":"193.9"},"user_id":{"null":3},"duration":"193.9","count":3,"totalDuration":"643.70","totalUser":1,"maxDuration":236.8},{"URL":"/","data_id":{"3679156":"215.2","3679301":"236.1","3679635":"196.8","3679641":"203.5"},"user_id":{"null":4},"duration":"203.5","count":4,"totalDuration":"851.60","totalUser":1,"maxDuration":236.1},{"URL":"/wp-content/plugins/wp-file-manager/readme.txt","data_id":{"3679436":"193.4"},"user_id":{"null":1},"duration":"193.4","count":1,"totalDuration":"193.4","totalUser":1,"maxDuration":"193.4"},{"URL":"/api/jsonws/invoke","data_id":{"3679434":"212.2"},"user_id":{"null":1},"duration":"212.2","count":1,"totalDuration":"212.2","totalUser":1,"maxDuration":"212.2"},{"URL":"/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583/1499794","data_id":{"3678822":"204.1"},"user_id":{"21":1},"duration":"204.1","count":1,"totalDuration":"204.1","totalUser":1,"maxDuration":"204.1"},{"URL":"/userApi/fleets/findings/3146ad30-2053-11eb-96dd-07ba069f1b24","data_id":{"3678544":"197.0","3678554":"210.3"},"user_id":{"null":2},"duration":"210.3","count":2,"totalDuration":"407.30","totalUser":1,"maxDuration":"210.3"},{"URL":"/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583/1496633","data_id":{"3678215":"196.2"},"user_id":{"21":1},"duration":"196.2","count":1,"totalDuration":"196.2","totalUser":1,"maxDuration":"196.2"},{"URL":"/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583/1490679","data_id":{"3678881":"195.0"},"user_id":{"21":1},"duration":"195.0","count":1,"totalDuration":"195.0","totalUser":1,"maxDuration":"195.0"},{"URL":"/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583/1501352","data_id":{"3677971":"197.4"},"user_id":{"21":1},"duration":"197.4","count":1,"totalDuration":"197.4","totalUser":1,"maxDuration":"197.4"},{"URL":"/userApi/fleets/cars/stats","data_id":{"3677416":"407.2"},"user_id":{"1251":1},"duration":"407.2","count":1,"totalDuration":"407.2","totalUser":1,"maxDuration":"407.2"},{"URL":"/userApi/fleets/cars/status/active","data_id":{"3677415":"316.1"},"user_id":{"1251":1},"duration":"316.1","count":1,"totalDuration":"316.1","totalUser":1,"maxDuration":"316.1"},{"URL":"/userApi/fleets/groups","data_id":{"3676855":"208.8","3676860":"351.8","3676863":"200.4","3676865":"198.8","3677414":"403.1"},"user_id":{"1250":4,"1251":1},"duration":"403.1","count":5,"totalDuration":"1362.90","totalUser":1,"maxDuration":"403.1"},{"URL":"/userApi/fleets/notifications","data_id":{"3676852":"398.0","3676946":"347.9","3677413":"444.2"},"user_id":{"1250":1,"1251":2},"duration":"444.2","count":3,"totalDuration":"1190.10","totalUser":1,"maxDuration":"444.2"},{"URL":"/userApi/fleets/company/profile","data_id":{"3676851":"318.6","3676944":"270.2","3677412":"414.7"},"user_id":{"1250":1,"1251":2},"duration":"414.7","count":3,"totalDuration":"1003.50","totalUser":1,"maxDuration":"414.7"},{"URL":"/userApi/fleets/tasks/204","data_id":{"3676945":"285.1"},"user_id":{"1251":1},"duration":"285.1","count":1,"totalDuration":"285.1","totalUser":1,"maxDuration":"285.1"},{"URL":"/userApi/fleets/maintenance/icons","data_id":{"3676856":"206.5","3676861":"367.6","3676864":"203.7","3676866":"204.3"},"user_id":{"1250":4},"duration":"204.3","count":4,"totalDuration":"982.10","totalUser":1,"maxDuration":367.6},{"URL":"/userApi/fleets/maintenance/schedulers/list","data_id":{"3676858":"213.1","3676862":"266.4"},"user_id":{"1250":2},"duration":"266.4","count":2,"totalDuration":"479.50","totalUser":1,"maxDuration":"266.4"},{"URL":"/userApi/fleets/maintenance/stats","data_id":{"3676857":"230.5","3676859":"227.2"},"user_id":{"1250":2},"duration":"227.2","count":2,"totalDuration":"457.70","totalUser":1,"maxDuration":230.5},{"URL":"/userApi/fleets/work-order/769","data_id":{"3676854":"325.4"},"user_id":{"1250":1},"duration":"325.4","count":1,"totalDuration":"325.4","totalUser":1,"maxDuration":"325.4"},{"URL":"/userApi/fleets/work-order/771","data_id":{"3676853":"413.2"},"user_id":{"1250":1},"duration":"413.2","count":1,"totalDuration":"413.2","totalUser":1,"maxDuration":"413.2"}]};
+        <script>
+
         // let text = 'true';
         //     const getTxt = async () => {
         //         const res = await fetch('/consoleText.txt');
