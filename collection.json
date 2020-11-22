@@ -35,7 +35,7 @@
 						"id": "a0d73db6-8be1-4e5a-a4af-0542f121500b",
 						"exec": [
 							"let responseJson2 = pm.response.json();",
-							" console.log(responseJson2.data);",
+							"//  console.log(responseJson2.data);",
 							"",
 							"const postRequest3 = {",
 							"    // url:\"https://sandbox.driveroo.com/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583?page=\",",
@@ -164,7 +164,7 @@
 							"//     eval(globals.globalFunction)(i);",
 							"//     console.log(\"------------------- cikle = \" + i + \"--------------------------\");",
 							"// }",
-							"for (let i = 1; i <= 2; ++i) {",
+							"for (let i = 1; i <= pm.response.json().last_page; ++i) {",
 							"    eval(globals.globalFunction)(i);",
 							"    console.log(\"------------------- cikle = \" + i + \"--------------------------\");",
 							"}",
@@ -248,6 +248,256 @@
 						{
 							"key": "status",
 							"value": ""
+						},
+						{
+							"key": "method",
+							"value": ""
+						},
+						{
+							"key": "duration",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "403",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "eb367ad8-d2fa-4b4f-9fb3-9e0ea040cbdb",
+						"exec": [
+							"var moment = require('moment');",
+							"// pm.globals.set(\"todeyDate\", moment().format(\"YYYY-MM-DD\"));",
+							"pm.globals.set(\"todeyDate\", moment().subtract(1, 'day').format(\"YYYY-MM-DD\"));",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "48780724-95a4-4126-bf91-f5fe1b7e453a",
+						"exec": [
+							"let responseJson2 = pm.response.json();",
+							"// console.log(responseJson2.data);",
+							"",
+							"const postRequest3 = {",
+							"    // url:\"https://sandbox.driveroo.com/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583?page=\",",
+							"    //   url: pm.globals.get(\"sand\")+\"/api/clockwork/\"+pm.globals.get(\"API_keys\")+\"?dateFrom=\"+pm.globals.get(\"todeyDate\")+\"&dateTo=\"+pm.globals.get(\"todeyDate\")+\"&page=\",",
+							"    url: \"https://sandbox.driveroo.com/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583?dateFrom=\" + pm.globals.get(\"todeyDate\") + \"&dateTo=\" + pm.globals.get(\"todeyDate\") + \"&page=\",",
+							"    method: 'GET',",
+							"    header: {",
+							"        'Content-Type': 'application/json',",
+							"        'X-Foo': 'bar'",
+							"    },",
+							"    body: {",
+							"    }",
+							"};",
+							"",
+							"let merged = { dataMethod: {}, dataURL: {} };",
+							"",
+							"postman.setGlobalVariable(\"globalFunction\", (parameters1, parameters2) => {",
+							"    pm.sendRequest(postRequest3.url + parameters1 + \"&status=\"+parameters2+\"&sort=id&order=desc&id=&user=&time=&url=&ip=&method=&duration=\", (error, response) => {",
+							"        // console.log(error ? error : response.json());",
+							"",
+							"        let responseJson = response.json();",
+							"        //   console.log(\"!!!!!!!!!!!1!!!!!!!!!!!!!\");",
+							"        //   console.log(responseJson);  ",
+							"        //   console.log(responseJson.last_page);  ",
+							"        responseJson = response.json().data;",
+							"        //  console.log(responseJson);  ",
+							"",
+							"",
+							"        for (var i = 0; i < responseJson.length; i++) {",
+							"            if (!merged.dataMethod[responseJson[i].method]) {",
+							"",
+							"                merged.dataMethod[responseJson[i].method] = { URL: responseJson[i].url, data_id: { [responseJson[i].id]: [responseJson[i].method, responseJson[i].duration] }, user_id: { [responseJson[i].user_id]: 1 }, duration: responseJson[i].duration, count: 1, totalDuration: responseJson[i].duration, totalUser: 1, totalDuration: responseJson[i].duration, maxDuration: responseJson[i].duration };",
+							"            }",
+							"",
+							"            if (!merged.dataURL[responseJson[i].url]) {                        ",
+							"                if (responseJson[i].user_id==null){",
+							"                    merged.dataURL[responseJson[i].url] = { URL: responseJson[i].url, data_id: { [responseJson[i].id]: [responseJson[i].id, responseJson[i].method, responseJson[i].response_status, responseJson[i].duration, responseJson[i].time, responseJson[i].db_duration, responseJson[i].db_queries, responseJson[i].time, responseJson[i].db_duration, responseJson[i].db_queries] }, user_id: { [responseJson[i].user_id]: [\"undefined use\",1]}, duration: responseJson[i].duration, count: 1, totalDuration: responseJson[i].duration, totalUser: 1, totalDuration: responseJson[i].duration, maxDuration: responseJson[i].duration };",
+							"                }",
+							"                else{",
+							"                    merged.dataURL[responseJson[i].url] = { URL: responseJson[i].url, data_id: { [responseJson[i].id]: [responseJson[i].id, responseJson[i].method, responseJson[i].response_status, responseJson[i].duration, responseJson[i].time, responseJson[i].db_duration, responseJson[i].db_queries, responseJson[i].time, responseJson[i].db_duration, responseJson[i].db_queries] }, user_id: { [responseJson[i].user_id]: [responseJson[i].user_id,1]}, duration: responseJson[i].duration, count: 1, totalDuration: responseJson[i].duration, totalUser: 1, totalDuration: responseJson[i].duration, maxDuration: responseJson[i].duration };",
+							"                }",
+							"",
+							"",
+							"",
+							"            } else {",
+							"                if (!merged.dataURL[responseJson[i].id]) {",
+							"                    merged.dataURL[responseJson[i].url].data_id[responseJson[i].id] = [responseJson[i].id, responseJson[i].method, responseJson[i].response_status, responseJson[i].duration, responseJson[i].time, responseJson[i].db_duration, responseJson[i].db_queries, responseJson[i].time, responseJson[i].db_duration, responseJson[i].db_queries];",
+							"                }",
+							"                if (merged.dataURL[responseJson[i].url].user_id) {",
+							"                    let qwe = merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id];",
+							"",
+							"                    if (!qwe) {",
+							"                        qwe = 1;",
+							"                        if (responseJson[i].user_id==null){",
+							"                            merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id] =[\"undefined use\", qwe];",
+							"                        }",
+							"                        else{",
+							"                            merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id] =[responseJson[i].user_id, qwe];",
+							"                        }",
+							"                        merged.dataURL[responseJson[i].url].totalUser += 1;",
+							"                    }",
+							"                    else {",
+							"                        merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id][1] = Number(merged.dataURL[responseJson[i].url].user_id[responseJson[i].user_id][1]) + 1;",
+							"                    }",
+							"                }",
+							"                if (Number(merged.dataURL[responseJson[i].url].maxDuration) < Number(responseJson[i].duration)) {",
+							"                    merged.dataURL[responseJson[i].url].maxDuration = Number(responseJson[i].duration);",
+							"",
+							"                }",
+							"                merged.dataURL[responseJson[i].url].count = Number(merged.dataURL[responseJson[i].url].count) + 1;",
+							"                merged.dataURL[responseJson[i].url].totalDuration = (Number(merged.dataURL[responseJson[i].url].totalDuration) + Number(responseJson[i].duration)).toFixed(2);",
+							"            }",
+							"        }",
+							"        // const dataMethodArr = Object.values(merged.dataMethod)",
+							"        // const dataURLArr = Object.values(merged.dataURL)",
+							"        const dataMethod = Object.values(merged.dataMethod);",
+							"        const dataURL = Object.values(merged.dataURL);",
+							"        ",
+							"        for (let i = 0; i < dataURL.length; i++) {",
+							"        ",
+							"            let URL = dataURL[i].URL",
+							"            let data_id = Object.values(dataURL[i].data_id)",
+							"            let user_id = Object.values(dataURL[i].user_id)",
+							"            let duration = dataURL[i].duration",
+							"            let count = dataURL[i].count",
+							"            let totalDuration = dataURL[i].totalDuration",
+							"            let totalUser = dataURL[i].totalUser",
+							"            let maxDuration = dataURL[i].maxDuration",
+							"",
+							"            dataURL[i] = {",
+							"                URL,",
+							"                data_id,",
+							"                user_id,",
+							"                duration,",
+							"                count,",
+							"                totalDuration,",
+							"                totalUser,",
+							"                maxDuration",
+							"            }",
+							"        }",
+							"",
+							"        // console.log(dataMethod);",
+							"        // console.log(\"dataURL - \"); console.log(dataURL);",
+							"        ",
+							"        const resultArr = {",
+							"            dataMethod,",
+							"            dataURL",
+							"        };",
+							"        // console.log( resultArr);",
+							"        pm.globals.set(\"JSON_Var_404\", resultArr);",
+							"        // console.log(pm.globals.get(\"JSON_Var_404\"));",
+							"        // console.log(merged);",
+							"",
+							"        // JSONParse.data.push(merged)",
+							"",
+							"        // pm.globals.set(\"JSON_Var\",merged);",
+							"        //  console.log(pm.globals.get(\"JSON_Var\"));",
+							"",
+							"        // responseJson2 = pm.response.json();",
+							"        //   console.log(\"!!!!!!!!!!!!2!!!!!!!!!!!!\");",
+							"        //   console.log(responseJson2);               ",
+							"        //   console.log(responseJson2.last_page);               ",
+							"    });",
+							"});",
+							"",
+							"for (let i = 1; i <= pm.response.json().last_page; ++i) {",
+							"    eval(globals.globalFunction)(i, 403);",
+							"    console.log(\"------------------- cikle = \" + i + \"--------------------------\");",
+							"}",
+							"// for (let i = 1; i <= 5; ++i) {",
+							"//     eval(globals.globalFunction)(i);",
+							"//     console.log(\"------------------- cikle = \" + i + \"--------------------------\");",
+							"// }",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData.first_page_url).to.be.a(\"string\");",
+							"});",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox.driveroo.com/api/clockwork/024e5916-d002-47e8-83f9-15ba0860c583?dateFrom={{todeyDate}}&dateTo={{todeyDate}}&page=&sort=id&order=desc&id=&user=&time=&url=&ip=&status=403&method=&duration=",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"driveroo",
+						"com"
+					],
+					"path": [
+						"api",
+						"clockwork",
+						"024e5916-d002-47e8-83f9-15ba0860c583"
+					],
+					"query": [
+						{
+							"key": "dateFrom",
+							"value": "{{todeyDate}}"
+						},
+						{
+							"key": "dateTo",
+							"value": "{{todeyDate}}"
+						},
+						{
+							"key": "page",
+							"value": ""
+						},
+						{
+							"key": "sort",
+							"value": "id"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "id",
+							"value": ""
+						},
+						{
+							"key": "user",
+							"value": ""
+						},
+						{
+							"key": "time",
+							"value": ""
+						},
+						{
+							"key": "url",
+							"value": ""
+						},
+						{
+							"key": "ip",
+							"value": ""
+						},
+						{
+							"key": "status",
+							"value": "403"
 						},
 						{
 							"key": "method",
