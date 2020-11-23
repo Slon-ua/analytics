@@ -35,7 +35,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
    // let text ="{"+ data.split("}'==")[0].split("=='{")[1] +"}" ;
 
-   let text ="{"+ data.split("} ] }")[0].split("│ {")[1] +"} ] }" ;
+     let text ="{"+ data.split("} ] }")[0].split("│ {")[1] +"} ] }" ;
      // console.log(text);
 
   
@@ -51,21 +51,25 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      text = replaceAll(text,'\n   ',"");
      text = replaceAll(text,' ',"");
      text = replaceAll(text,' ',"");
+      text = replaceAll(text,'{URL:',"\n{URL:");
+     // text = replaceAll(text,'},,'," ");
+
+
      // console.log(JSON.stringify(text));
      // console.log(text);
   console.log("_______________________________ 2.01 ");
-   console.log(text);
+   // console.log(text);
   console.log("_______________________________ 2.02 ");
 
-      // text = eval('(' + text + ')');
+       text = eval('(' + text + ')');
      // text = eval(text);
-     dataAll = JSON.stringify(text);
-     // dataAll = text;
+     // dataAll = JSON.stringify(text);
+      dataAll = text;
 
-     // console.log(text);
+     console.log(text);
 
   console.log("_______________________________ 2.03 ");
-     // console.log(JSON.stringify(text));
+      // console.log(JSON.stringify(text));
       
      console.log("_______________________________ 2.1 ");
 
@@ -94,7 +98,8 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text2 = replaceAll(text2,' ',"");
 
       text2 = eval('(' + text2 + ')');
-      data404 = JSON.stringify(text2);
+      // data404 = JSON.stringify(text2);
+      data404 = text2
 
       // console.log(text2);
 
@@ -120,9 +125,10 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text3 = replaceAll(text3,'\n   ',"");
       text3 = replaceAll(text3,' ',"");
 
-      text3 = eval('(' + text3 + ')');
-      data500 = JSON.stringify(text3);
-      
+      // text3 = eval('(' + text3 + ')');
+      // data500 = JSON.stringify(text3);
+      data500 = text3
+
       // console.log(text3);
 
      console.log("_______________________________ 2.4 ");
@@ -145,9 +151,9 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text4 = replaceAll(text4,'\n   ',"");
       text4 = replaceAll(text4,' ',"");
 
-      text4 = eval('(' + text4 + ')');
-      data403 = JSON.stringify(text4);
-      
+      // text4 = eval('(' + text4 + ')');
+      // data403 = JSON.stringify(text4);
+      data403 = text4
       // console.log(data403);
 
 
