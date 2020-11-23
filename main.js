@@ -208,17 +208,20 @@ fileHandler4();
 //   console.log(data223);
 
 function fileHandler3(varName,data){
-
     fs.appendFile('./JSONvar.js', "let "+varName+" = " + JSON.stringify(data, null, '\t') +";\n", (err) => {
         if(err) throw err;
         console.log('Data has been added!2');
+         sleep(2000);
     });
 }
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-// fileHandler3("myArray500",data500);
-// fileHandler3("myArray404",data404);
-// fileHandler3("myArray403",data403);
-// fileHandler3("myArrayAll",dataAll);
+fileHandler3("myArray500",data500);
+fileHandler3("myArray404",data404);
+fileHandler3("myArray403",data403);
+fileHandler3("myArrayAll",dataAll);
 
 // fileHandler3("myArray500",data2);
 
