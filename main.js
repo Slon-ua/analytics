@@ -23,7 +23,7 @@ function fileHandler2(){
 fileHandler2();
 
 
-let qwe = path.join(__dirname, "helpers", "../../jobs/analytics/builds/69/log");
+let qwe = path.join(__dirname, "helpers", "../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
 data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
       if (err) {
         throw err;
