@@ -176,18 +176,18 @@ console.log("_______________________________ 1 ");
      // console.log(data2);
 
 
-// function fileHandler3(varName,data){
+function fileHandler4(varName,data){
 
-//       fs.truncate("./JSONvar.js", 0, function() {
-//         fs.writeFile("./JSONvar.js", "let "+varName+" = "  + data +";\n", function (err) {
-//             if (err) {
-//                 return console.log("Error writing file: " + err);
-//             }
-//             console.log('Data has been added!2');
-//         });
-//     });
-// }
-
+      fs.truncate("./JSONvar.js", 0, function() {
+        // fs.writeFile("./JSONvar.js", "let "+varName+" = "  + data +";\n", function (err) {
+        //     if (err) {
+        //         return console.log("Error writing file: " + err);
+        //     }
+        //     console.log('Data has been added!2');
+        // });
+    });
+}
+fileHandler4();
 function fileHandler3(varName,data){
 
     fs.appendFile('./JSONvar.js', "let "+varName+" = " + JSON.stringify(data, null, '\t') +";\n", (err) => {
