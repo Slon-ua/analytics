@@ -160,13 +160,19 @@ console.log("_______________________________ 3 ");
 console.log("_______________________________ 1 ");
      // console.log(data2);
 
+
 function fileHandler3(varName,data){
 
-    fs.appendFile('./test1/testFile.json', "var "+varName+" = " + data +";\n", (err) => {
-        if(err) throw err;
-        console.log('Data has been added!2');
+      fs.truncate("./JSONvar.js", 0, function() {
+        fs.writeFile("./JSONvar.js", "let "+varName+" = "  + data +";\n", function (err) {
+            if (err) {
+                return console.log("Error writing file: " + err);
+            }
+            console.log('Data has been added!2');
+        });
     });
 }
+
 fileHandler3("myArrayAll",dataAll);
 fileHandler3("myArray500",data500);
 fileHandler3("myArray404",data404);
