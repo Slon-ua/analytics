@@ -18,7 +18,7 @@ node {
 // 		sh 'ls -la ../../../'
 // 		sh 'ls -la ../../jobs/'
 // 		sh 'ls -la ../../jobs/analytics/'
-//         sh 'ls -la ../../jobs/analytics/builds/'+env.BUILD_NUMBER
+        sh 'ls -la ../../jobs/analytics/builds/'+env.BUILD_NUMBER
 
 		try {
 			sh 'npm run api-tests'
