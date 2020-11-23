@@ -75,7 +75,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      // dataAll = JSON.stringify(text);
       dataAll = text;
 
-     console.log(text);
+     // console.log(text);
 
   console.log("_______________________________ 2.03 ");
       // console.log(JSON.stringify(text));
