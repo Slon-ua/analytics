@@ -211,7 +211,6 @@ function fileHandler3(varName,data){
     fs.appendFile('./JSONvar.js', "let "+varName+" = " + JSON.stringify(data, null, '\t') +";\n", (err) => {
         if(err) throw err;
         console.log('Data has been added!2');
-         sleep(2000);
     });
 }
 function sleep(ms) {
@@ -219,8 +218,11 @@ function sleep(ms) {
 }
 
 fileHandler3("myArray500",data500);
+         sleep(3000);
 fileHandler3("myArray404",data404);
+         sleep(3000);
 fileHandler3("myArray403",data403);
+         sleep(3000);
 fileHandler3("myArrayAll",dataAll);
 
 // fileHandler3("myArray500",data2);
