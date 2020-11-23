@@ -215,7 +215,7 @@ function fileHandler3(varName,data){
     });
 }
 
-fileHandler3("myArrayAll",dataAll);
+// fileHandler3("myArrayAll",dataAll);
 fileHandler3("myArray500",data500);
 fileHandler3("myArray404",data404);
 fileHandler3("myArray403",data403);
