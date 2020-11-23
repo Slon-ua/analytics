@@ -1,26 +1,28 @@
+console.log(process.env.BUILD_NUMBER);   
+
 let fs = require('fs'),
     path = require("path"),
     util = require("util");
 
-function fileHandler(){
+// function fileHandler(){
 
-    fs.open('./test1/testFile.js', 'w', (err) => {
-        if(err) throw err;
-        console.log('File created');
-    });
+//     fs.open('./test1/testFile.js', 'w', (err) => {
+//         if(err) throw err;
+//         console.log('File created');
+//     });
     
-}
-fileHandler();
+// }
+// fileHandler();
 
-function fileHandler2(){
+// function fileHandler2(){
 
-    fs.appendFile('testFile.js', ' This line is beyond the end. \n', (err) => {
-        if(err) throw err;
-        console.log('Data has been added!1');
-    });
+//     fs.appendFile('testFile.js', ' This line is beyond the end. \n', (err) => {
+//         if(err) throw err;
+//         console.log('Data has been added!1');
+//     });
 
-}
-fileHandler2();
+// }
+// fileHandler2();
 
 
 let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
@@ -29,6 +31,13 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
         throw err;
       }
 });
+
+// let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+// data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+//       if (err) {
+//         throw err;
+//       }
+// });
   
   console.log("_______________________________ 2 ");
   // console.log(data);
@@ -167,15 +176,23 @@ console.log("_______________________________ 1 ");
      // console.log(data2);
 
 
+// function fileHandler3(varName,data){
+
+//       fs.truncate("./JSONvar.js", 0, function() {
+//         fs.writeFile("./JSONvar.js", "let "+varName+" = "  + data +";\n", function (err) {
+//             if (err) {
+//                 return console.log("Error writing file: " + err);
+//             }
+//             console.log('Data has been added!2');
+//         });
+//     });
+// }
+
 function fileHandler3(varName,data){
 
-      fs.truncate("./JSONvar.js", 0, function() {
-        fs.writeFile("./JSONvar.js", "let "+varName+" = "  + data +";\n", function (err) {
-            if (err) {
-                return console.log("Error writing file: " + err);
-            }
-            console.log('Data has been added!2');
-        });
+    fs.appendFile('./JSONvar.js', "let "+varName+" = " + JSON.stringify(data, null, '\t') +";\n", (err) => {
+        if(err) throw err;
+        console.log('Data has been added!2');
     });
 }
 
