@@ -25,19 +25,19 @@ let fs = require('fs'),
 // fileHandler2();
 
 
-let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
-data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
-      if (err) {
-        throw err;
-      }
-});
-
-// let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+// let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
 // data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
 //       if (err) {
 //         throw err;
 //       }
 // });
+
+let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+      if (err) {
+        throw err;
+      }
+});
   
   console.log("_______________________________ 2 ");
   // console.log(data);
@@ -175,6 +175,15 @@ console.log("_______________________________ 3 ");
 console.log("_______________________________ 1 ");
      // console.log(data2);
 
+//  qwe = path.join(__dirname, "helpers", "../JSONvar.js");
+// data123 = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+//       if (err) {
+//         throw err;
+//       }
+// });
+// console.log("_______________________________ 11111111 ");
+
+//   console.log(data123);
 
 function fileHandler4(){
 
@@ -188,6 +197,15 @@ function fileHandler4(){
     });
 }
 fileHandler4();
+//  qwe = path.join(__dirname, "helpers", "../JSONvar.js");
+// data223 = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+//       if (err) {
+//         throw err;
+//       }
+// });
+// console.log("_______________________________ 222222222 ");
+
+//   console.log(data223);
 
 function fileHandler3(varName,data){
 
