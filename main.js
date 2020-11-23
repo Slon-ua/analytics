@@ -25,19 +25,19 @@ let fs = require('fs'),
 // fileHandler2();
 
 
-let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
-data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
-      if (err) {
-        throw err;
-      }
-});
-
-// let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+// let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
 // data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
 //       if (err) {
 //         throw err;
 //       }
 // });
+
+let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+      if (err) {
+        throw err;
+      }
+});
   
   console.log("_______________________________ 2 ");
   // console.log(data);
@@ -215,10 +215,11 @@ function fileHandler3(varName,data){
     });
 }
 
+// fileHandler3("myArray500",data500);
+// fileHandler3("myArray404",data404);
+// fileHandler3("myArray403",data403);
 // fileHandler3("myArrayAll",dataAll);
-fileHandler3("myArray500",data500);
-fileHandler3("myArray404",data404);
-fileHandler3("myArray403",data403);
+
 // fileHandler3("myArray500",data2);
 
 
