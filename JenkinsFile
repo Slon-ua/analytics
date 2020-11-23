@@ -11,13 +11,13 @@ node {
 		git 'https://github.com/Slon-ua/analytics.git'
 		sh 'npm install'
 		sh 'pwd'
-//  		sh 'ls -la '
-//  		sh 'ls -la ../'
-// //		sh 'ls -la ../Postman_Driveroo'
-// 		sh 'ls -la ../../'
-// 		sh 'ls -la ../../../'
-// 		sh 'ls -la ../../jobs/'
-// 		sh 'ls -la ../../jobs/analytics/'
+ 		sh 'ls -la '
+ 		sh 'ls -la ../'
+//		sh 'ls -la ../Postman_Driveroo'
+		sh 'ls -la ../../'
+		sh 'ls -la ../../../'
+		sh 'ls -la ../../jobs/'
+		sh 'ls -la ../../jobs/analytics/'
         sh 'ls -la ../../jobs/analytics/builds/'+env.BUILD_NUMBER
 
 		try {
