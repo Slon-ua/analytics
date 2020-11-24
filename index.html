@@ -192,14 +192,13 @@
         </table>
     </div>
 
-        </script>
         <script>
 
 //switch drop-down list           
             buildTable(myArrayAll,"myTable1");
             buildTable(myArray404,"myTable2");
-            buildTable(myArray403,"myTable3");
-            buildTable(myArray500,"myTable4");
+            buildTable(myArray404,"myTable3");
+            buildTable(myArray404,"myTable4");
             // buildTable(myArray500,myTable3);
 
 
@@ -233,16 +232,16 @@
                 
                 for(var i = 0; i < data2.dataURL.length; i++){
                     var row =   `<tr class="foo" id="b">
-                                    <!--<td><button class="" value="b`+i+`,d`+i+`,c`+i+`">"+"</button></td>-->
-                                    <td><button class="" value="b`+i+`,d`+i+`,c`+i+`">"+"</button></td>
+                                    <!--<td><button class="" value="`+myTable+`b`+i+`,`+myTable+`d`+i+`,`+myTable+`c`+i+`">"+"</button></td>-->
+                                    <td><button class="" value="`+myTable+`b`+i+`,`+myTable+`d`+i+`,`+myTable+`c`+i+`">"+"</button></td>
                                     <td>${data2.dataURL[i].URL}</td>
                                     <td>${data2.dataURL[i].totalUser}</td>
                                     <td>${data2.dataURL[i].count}</td>
                                     <td>${data2.dataURL[i].maxDuration}</td>
                                 </tr>
                               
-                                <thead><tr  class="bg-info toggle b`+i+`">                                  
-                                    <th><button class="" value="d`+i+`">"+"</button></th>
+                                <thead><tr  class="bg-info toggle `+myTable+`b`+i+`">                                  
+                                    <th><button class="" value="`+myTable+`d`+i+`">"+"</button></th>
                                     <th></th>
                                     <th>User_id</th>
                                     <th>CountRequest</th>
@@ -254,7 +253,7 @@
 
 
                     for(var j = 0; j < data2.dataURL[i].user_id.length; j++){  
-                        var row = `<tr class="toggle d`+i+`">
+                        var row = `<tr class="toggle `+myTable+`d`+i+`">
                                             <td></td>
                                             <th></th>
                                             <td>${data2.dataURL[i].user_id[j][0]}</td>
@@ -266,8 +265,8 @@
 
                     }              
 
-                    var row =`<thead><tr  class="bg-info toggle b`+i+` ">  
-                                <th><button class="" value="c`+i+`">"+"</button></th>
+                    var row =`<thead><tr  class="bg-info toggle `+myTable+`b`+i+` ">  
+                                <th><button class="" value="`+myTable+`c`+i+`">"+"</button></th>
                                 <th>Data_id</th>
                                 <th>Method</th>
                                 <th>Response</th>
@@ -277,7 +276,7 @@
                     table.innerHTML += row;
 
                     for(var j = 0; j < data2.dataURL[i].data_id.length; j++){  
-                         var row =   `<tr class="toggle c`+i+`">
+                         var row =   `<tr class="toggle `+myTable+`c`+i+`">
                                         <td></td>
                                         <td><a href="https://sandbox.driveroo.com/admin/clockwork/${data2.dataURL[i].data_id[j][0]}" target="_blank">${data2.dataURL[i].data_id[j][0]}</td>
                                         <td>${data2.dataURL[i].data_id[j][1]}</td>

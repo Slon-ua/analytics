@@ -25,19 +25,19 @@ let fs = require('fs'),
 // fileHandler2();
 
 
-let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
-data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
-      if (err) {
-        throw err;
-      }
-});
-
-// let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+// let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
 // data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
 //       if (err) {
 //         throw err;
 //       }
 // });
+
+let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+      if (err) {
+        throw err;
+      }
+});
   
   console.log("_______________________________ 2 ");
   // console.log(data);
