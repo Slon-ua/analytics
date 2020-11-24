@@ -64,7 +64,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      text = replaceAll(text,'\n   ',"");
      text = replaceAll(text,' ',"");
      text = replaceAll(text,' ',"");
-      text = replaceAll(text,'{URL:',"\n{URL:");
+      // text = replaceAll(text,'{URL:',"\n{URL:");
      // text = replaceAll(text,'},,'," ");
 
 
@@ -74,9 +74,12 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
    // console.log(text);
   console.log("_______________________________ 2.02 ");
 
-       // text = eval('(' + text + ')');
+       text = eval('(' + text + ')');
      // text = eval(text);
      // dataAll = JSON.stringify(text);
+           
+         sleep(10000);
+
       dataAll = text;
          sleep(5000);
 
