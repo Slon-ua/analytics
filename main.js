@@ -70,7 +70,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
    // console.log(text);
   console.log("_______________________________ 2.02 ");
 
-       // text = eval('(' + text + ')');
+       text = eval('(' + text + ')');
      // text = eval(text);
      // dataAll = JSON.stringify(text);
       dataAll = text;
@@ -134,7 +134,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text3 = replaceAll(text3,'\n   ',"");
       text3 = replaceAll(text3,' ',"");
 
-      // text3 = eval('(' + text3 + ')');
+       text3 = eval('(' + text3 + ')');
       // data500 = JSON.stringify(text3);
       data500 = text3
 
@@ -160,7 +160,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text4 = replaceAll(text4,'\n   ',"");
       text4 = replaceAll(text4,' ',"");
 
-      // text4 = eval('(' + text4 + ')');
+       text4 = eval('(' + text4 + ')');
       // data403 = JSON.stringify(text4);
       data403 = text4
       // console.log(data403);
