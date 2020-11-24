@@ -4,6 +4,10 @@ let fs = require('fs'),
     path = require("path"),
     util = require("util");
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // function fileHandler(){
 
 //     fs.open('./test1/testFile.js', 'w', (err) => {
@@ -74,6 +78,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      // text = eval(text);
      // dataAll = JSON.stringify(text);
       dataAll = text;
+         sleep(5000);
 
      // console.log(text);
 
@@ -111,6 +116,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       data404 = text2
 
       // console.log(text2);
+         sleep(5000);
 
 
 
@@ -137,6 +143,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
        text3 = eval('(' + text3 + ')');
       // data500 = JSON.stringify(text3);
       data500 = text3
+         sleep(5000);
 
       // console.log(text3);
 
@@ -166,6 +173,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       // console.log(data403);
 
 
+         sleep(5000);
 
 console.log("_______________________________ 3 ");
 
@@ -213,17 +221,15 @@ function fileHandler3(varName,data){
         console.log('Data has been added!2');
     });
 }
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+
 
 fileHandler3("myArray500",data500);
-         sleep(3000);
+         sleep(5000);
 fileHandler3("myArray404",data404);
-         sleep(3000);
+         sleep(5000);
 fileHandler3("myArray403",data403);
-         sleep(3000);
-// fileHandler3("myArrayAll",dataAll);
+         sleep(5000);
+fileHandler3("myArrayAll",dataAll);
 
 // fileHandler3("myArray500",data2);
 
