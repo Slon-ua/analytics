@@ -70,7 +70,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
    // console.log(text);
   console.log("_______________________________ 2.02 ");
 
-       // text = eval('(' + text + ')');
+       text = eval('(' + text + ')');
      // text = eval(text);
      // dataAll = JSON.stringify(text);
       dataAll = text;
@@ -223,7 +223,7 @@ fileHandler3("myArray404",data404);
          sleep(3000);
 fileHandler3("myArray403",data403);
          sleep(3000);
-fileHandler3("myArrayAll",dataAll);
+// fileHandler3("myArrayAll",dataAll);
 
 // fileHandler3("myArray500",data2);
 
