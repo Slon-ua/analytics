@@ -49,21 +49,21 @@ let myArray500 = {
 let myArray404 = {
 	"dataMethod": [
 		{
-			"URL": "/email/invitations/first.gif",
+			"URL": "/actuator/health",
 			"data_id": {
-				"3730014": [
+				"3730509": [
 					"GET",
-					"212.1"
+					"202.0"
 				]
 			},
 			"user_id": {
 				"null": 1
 			},
-			"duration": "212.1",
+			"duration": "202.0",
 			"count": 1,
-			"totalDuration": "212.1",
+			"totalDuration": "202.0",
 			"totalUser": 1,
-			"maxDuration": "212.1"
+			"maxDuration": "202.0"
 		},
 		{
 			"URL": "/userApi/fleets/findings//resolve",
@@ -84,6 +84,31 @@ let myArray404 = {
 		}
 	],
 	"dataURL": [
+		{
+			"URL": "/actuator/health",
+			"data_id": [
+				[
+					"3730509",
+					"GET",
+					"404",
+					"202.0",
+					"2020-11-3018:41:47",
+					"0.0",
+					"0"
+				]
+			],
+			"user_id": [
+				[
+					"undefineduse",
+					1
+				]
+			],
+			"duration": "202.0",
+			"count": 1,
+			"totalDuration": "202.0",
+			"totalUser": 1,
+			"maxDuration": "202.0"
+		},
 		{
 			"URL": "/email/invitations/first.gif",
 			"data_id": [
