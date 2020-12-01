@@ -213,7 +213,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text5 = replaceAll(text5,'\n   ',"");
       text5 = replaceAll(text5,' ',"");
 
-       text5 = eval('(' + text5 + ')');
+       // text5 = eval('(' + text5 + ')');
       // data403 = JSON.stringify(text4);
       dataDuration1 = text5
       // console.log(data403.dataMethod[0].count);
@@ -222,12 +222,14 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.6 ");
 
 
-       var text6 ="{"+ data.split("] }\n ")[5].split("│ {")[1] +" ] }" ;        
+       var text6 ="{"+ data.split("] }\n ")[5].split("│ {")[1] +" ] }" ; 
+
+        text6 =util.inspect("{"+ data.split("] }\n ")[5].split("│ {")[1] +" ] }", {'maxArrayLength': null})       
       // console.log(text6);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
        // console.log(data.split("} ] }")[2].split("│ {")[1])
-
+// util.inspect.defaultOptions.maxArrayLength = null;
 
     //  param1 =  "│ {";
     //  param2 = "} }";
@@ -239,11 +241,16 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text6 = replaceAll(text6,'\n   ',"");
       text6 = replaceAll(text6,' ',"");
 
-       text6 = eval('(' + text6 + ')');
+      // text6 = eval('(' + JSON.stringify(text6, null, 1) + ')');
       // data403 = JSON.stringify(text4);
       dataDuration2 = text6
-      // console.log(data403.dataMethod[0].count);
+       console.log(text6);
+// console.log(JSON.stringify(text6, null, 1))
+// console.dir(text6, {'maxArrayLength': null})
 
+// const util = require('util')
+// console.log(util.inspect(text6, { maxArrayLength: null }))
+// console.log(util.inspect(text6, {maxArrayLength: null, depth:null }))
 
      console.log("_______________________________ 2.7 ");
 
@@ -269,7 +276,8 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       // data403 = JSON.stringify(text4);
       dataDuration3 = text7
       // console.log(data403.dataMethod[0].count);
-      
+            // console.log(text7);
+
       
       
       console.log("_______________________________ 2.8 ");
@@ -296,6 +304,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       // data403 = JSON.stringify(text4);
       dataDuration4 = text8
       // console.log(data403.dataMethod[0].count);
+      // console.log(text8);
 
 
          // sleep(2000);
@@ -421,25 +430,25 @@ if (!data403.dataMethod.length){
 }
 else{fileHandler3("myArray403",data403);}
 
-    if (!dataDuration1.dataMethod.length){
-      fileHandler3("myArrayDuration_1",emptyTable);
-    }
-    else{fileHandler3("myArrayDuration_1",dataDuration1);} 
+    // if (!dataDuration1.dataMethod.length){
+    //   fileHandler3("myArrayDuration_1",emptyTable);
+    // }
+    // else{fileHandler3("myArrayDuration_1",dataDuration1);} 
 
-    if (!dataDuration2.dataMethod.length){
-      fileHandler3("myArrayDuration_2",emptyTable);
-    }
-    else{fileHandler3("myArrayDuration_2",dataDuration2);}
+    // if (!dataDuration2.dataMethod.length){
+    //   fileHandler3("myArrayDuration_2",emptyTable);
+    // }
+    // else{fileHandler3("myArrayDuration_2",dataDuration2);}
 
-    if (!dataDuration3.dataMethod.length){
-      fileHandler3("myArrayDuration_3",emptyTable);
-    }
-    else{fileHandler3("myArrayDuration_3",dataDuration3);}
+    // if (!dataDuration3.dataMethod.length){
+    //   fileHandler3("myArrayDuration_3",emptyTable);
+    // }
+    // else{fileHandler3("myArrayDuration_3",dataDuration3);}
 
-    if (!dataDuration4.dataMethod.length){
-      fileHandler3("myArrayDuration_4",emptyTable);
-    }
-    else{fileHandler3("myArrayDuration_4",dataDuration4);}
+    // if (!dataDuration4.dataMethod.length){
+    //   fileHandler3("myArrayDuration_4",emptyTable);
+    // }
+    // else{fileHandler3("myArrayDuration_4",dataDuration4);}
 
 // fileHandler3("myArrayAll",dataAll);
 

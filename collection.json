@@ -1967,13 +1967,15 @@
 							"console.log(\"==JSON_Var_403==\");",
 							"console.log(pm.globals.get(\"JSON_Var_403\"));",
 							"console.log(\"==\");",
-							"console.log(\"==JJSON_Var_Duration_1-2==\");",
+							"console.log(\"==JSON_Var_Duration_1-2==\");",
 							"console.log(pm.globals.get(\"JSON_Var_Duration_1-2\"));",
 							"console.log(\"==\");",
 							"console.log(\"==JSON_Var_Duration_2-5==\");",
 							"console.log(pm.globals.get(\"JSON_Var_Duration_2-5\"));",
 							"console.log(\"==\");",
-							"console.log(\"==JSON_Var_Duration_5-10==\");",
+							"// console.log(\"==JSON_Var_Duration_5-10==\");",
+							"console.log(util.inspect(\"==JSON_Var_Duration_5-10==\", {maxArrayLength: null, depth:null }));",
+							"// util.inspect(text6, {maxArrayLength: null, depth:null })",
 							"console.log(pm.globals.get(\"JSON_Var_Duration_5-10\"));",
 							"console.log(\"==\");",
 							"console.log(\"==JSON_Var_Duration_10-...==\");",
@@ -2037,7 +2039,7 @@
 	],
 	"variable": [
 		{
-			"id": "22d6c781-9f27-415a-adfe-7a34e0c272cc",
+			"id": "0bad834c-2eac-4c49-9a0d-325da22944d3",
 			"key": "sand",
 			"value": "https://sandbox.driveroo.com"
 		}
