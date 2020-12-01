@@ -4,10 +4,14 @@ let fs = require('fs'),
     path = require("path"),
     util = require("util");
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
 
+function sleep(ms) {
+ms += new Date().getTime();
+while (new Date() < ms){}
+} 
 // function fileHandler(){
 
 //     fs.open('./test1/testFile.js', 'w', (err) => {
@@ -29,19 +33,19 @@ function sleep(ms) {
 // fileHandler2();
 
 
-let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
-data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
-      if (err) {
-        throw err;
-      }
-});
-
-// let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+// let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
 // data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
 //       if (err) {
 //         throw err;
 //       }
 // });
+
+let qwe = path.join(__dirname, "helpers", "../../consoleText1.txt");
+data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+      if (err) {
+        throw err;
+      }
+});
   
   console.log("_______________________________ 2 ");
   // console.log(data);
@@ -50,19 +54,28 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
      let text ="{"+ data.split("] }\n ")[0].split("│ {")[1] +" ] }" ;
      // console.log(text);
+               // sleep(5000);
 
+     // console.log(text);
   
   console.log("_______________________________ 2.0 ");
 
   function replaceAll(str, find1, replace1) {
       return str.replace(new RegExp(find1, 'g'), replace1);
+                     // sleep(5000);
     }
 
      text = replaceAll(text,'│',"");
+                    // sleep(5000);
+
      text = replaceAll(text,"'",'"');
+               // sleep(5000);
      text = replaceAll(text,'n\n   d',"nd");
+               // sleep(5000);
      text = replaceAll(text,'\n   ',"");
+               // sleep(5000);
      text = replaceAll(text,' ',"");
+               // sleep(5000);
      text = replaceAll(text,' ',"");
       // text = replaceAll(text,'{URL:',"\n{URL:");
      // text = replaceAll(text,'},,'," ");
@@ -73,15 +86,18 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
   console.log("_______________________________ 2.01 ");
    // console.log(text);
   console.log("_______________________________ 2.02 ");
+      
+      // sleep(5000);
+      //  text = eval('(' + text + ')');
+      // sleep(5000);
 
-       // text = eval('(' + text + ')');
      // text = eval(text);
-     // dataAll = JSON.stringify(text);
+      // dataAll = JSON.stringify(text);
            
-         sleep(10000);
+         // sleep(2000);
 
       dataAll = text;
-         sleep(5000);
+         // sleep(2000);
 
      // console.log(text);
 
@@ -119,7 +135,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       data404 = text2
 
       // console.log(text2);
-         sleep(5000);
+         // sleep(2000);
 
 
 
@@ -146,18 +162,18 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
        text3 = eval('(' + text3 + ')');
       // data500 = JSON.stringify(text3);
       data500 = text3
-         sleep(5000);
+         // sleep(2000);
 
       // console.log(text3);
 
      console.log("_______________________________ 2.4 ");
 
 
-       var text4 ="{"+ data.split("] }\n ")[2].split("│ {")[1] +" ] }" ;        
-      // console.log(text3);
+       var text4 ="{"+ data.split("] }\n ")[3].split("│ {")[1] +" ] }" ;        
+      console.log(text4);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
-      // console.log(data.split("} ] }")[2].split("│ {")[1])
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
 
 
     //  param1 =  "│ {";
@@ -173,10 +189,116 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
        text4 = eval('(' + text4 + ')');
       // data403 = JSON.stringify(text4);
       data403 = text4
-      // console.log(data403);
+      // console.log(data403.dataMethod[0].count);
 
 
-         sleep(5000);
+
+     console.log("_______________________________ 2.5 ");
+
+
+       var text5 ="{"+ data.split("] }\n ")[4].split("│ {")[1] +" ] }" ;        
+      console.log(text5);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text5 = replaceAll(text5,'│',"");
+      text5 = replaceAll(text5,"'",'"');
+      text5 = replaceAll(text5,'n\n   d',"nd")    
+      text5 = replaceAll(text5,'\n   ',"");
+      text5 = replaceAll(text5,' ',"");
+
+       text5 = eval('(' + text5 + ')');
+      // data403 = JSON.stringify(text4);
+      dataDuration1 = text5
+      // console.log(data403.dataMethod[0].count);
+      
+      
+     console.log("_______________________________ 2.6 ");
+
+
+       var text6 ="{"+ data.split("] }\n ")[5].split("│ {")[1] +" ] }" ;        
+      console.log(text6);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text6 = replaceAll(text6,'│',"");
+      text6 = replaceAll(text6,"'",'"');
+      text6 = replaceAll(text6,'n\n   d',"nd")    
+      text6 = replaceAll(text6,'\n   ',"");
+      text6 = replaceAll(text6,' ',"");
+
+       text6 = eval('(' + text6 + ')');
+      // data403 = JSON.stringify(text4);
+      dataDuration2 = text6
+      // console.log(data403.dataMethod[0].count);
+
+
+     console.log("_______________________________ 2.7 ");
+
+
+       var text7 ="{"+ data.split("] }\n ")[6].split("│ {")[1] +" ] }" ;        
+      console.log(text7);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text7 = replaceAll(text7,'│',"");
+      text7 = replaceAll(text7,"'",'"');
+      text7 = replaceAll(text7,'n\n   d',"nd")    
+      text7 = replaceAll(text7,'\n   ',"");
+      text7 = replaceAll(text7,' ',"");
+
+       text7 = eval('(' + text7 + ')');
+      // data403 = JSON.stringify(text4);
+      dataDuration3 = text7
+      // console.log(data403.dataMethod[0].count);
+      
+      
+      
+      console.log("_______________________________ 2.8 ");
+
+
+       var text8 ="{"+ data.split("] }\n ")[7].split("│ {")[1] +" ] }" ;        
+      console.log(text8);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text8 = replaceAll(text8,'│',"");
+      text8 = replaceAll(text8,"'",'"');
+      text8 = replaceAll(text8,'n\n   d',"nd")    
+      text8 = replaceAll(text8,'\n   ',"");
+      text8 = replaceAll(text8,' ',"");
+
+       text8 = eval('(' + text8 + ')');
+      // data403 = JSON.stringify(text4);
+      dataDuration4 = text8
+      // console.log(data403.dataMethod[0].count);
+
+
+         // sleep(2000);
 
 console.log("_______________________________ 3 ");
 
@@ -221,20 +343,107 @@ fileHandler4();
 function fileHandler3(varName,data){
     fs.appendFile('./JSONvar.js', "let "+varName+" = " + JSON.stringify(data, null, '\t') +";\n", (err) => {
         if(err) throw err;
-        console.log('Data has been added!2');
+        console.log('Data has been added! '+varName);
+                 // sleep(5000);
     });
 }
 
+// setTimeout(fileHandler3("myArray500",data500), 3000);
+// setTimeout(fileHandler3("myArray404",data404), 3000);
+// setTimeout(fileHandler3("myArray403",data403), 3000);
+// setTimeout(fileHandler3("myArrayAll",dataAll), 3000);
 
-fileHandler3("myArray500",data500);
-         sleep(5000);
-fileHandler3("myArray404",data404);
-         sleep(5000);
-fileHandler3("myArray403",data403);
-         sleep(5000);
-fileHandler3("myArrayAll",dataAll);
+let emptyTable = {"dataMethod": [
+                      {
+                        "URL": "No data",
+                        "data_id": {
+                          "No data": [
+                            "No data",
+                            "No data"
+                          ]
+                        },
+                        "user_id": {
+                          "2437": "No data"
+                        },
+                        "duration": "No data",
+                        "count": 1,
+                        "totalDuration": "No data",
+                        "totalUser": 1,
+                        "maxDuration": "No data"
+                      }
+                    ],
+                    "dataURL": [
+                    {
+                       "URL": "No data",
+                        "data_id": [
+                          [
+                            "No data",
+                            "No data",
+                            "No data",
+                            "No data",
+                            "No data",
+                            "No data",
+                            "No data",
+                            "No data",
+                            "No data",
+                            "No data"
+                          ]
+                        ],
+                        "user_id": [
+                          [
+                            "No data",
+                            "No data"
+                          ]
+                        ],
+                        "duration": "No data",
+                        "count": "No data",
+                        "totalDuration": "No data",
+                        "totalUser": "No data",
+                        "maxDuration": "No data"
+                      }
+                    ]
+                  };
 
-// fileHandler3("myArray500",data2);
+
+
+if (!data500.dataMethod.length){
+  fileHandler3("myArray500",emptyTable);
+}
+else{fileHandler3("myArray500",data500);}
+
+if (!data404.dataMethod.length){
+  fileHandler3("myArray404",emptyTable);
+}
+else{fileHandler3("myArray404",data404);}
+
+if (!data403.dataMethod.length){
+  fileHandler3("myArray403",emptyTable);
+}
+else{fileHandler3("myArray403",data403);}
+
+    if (!dataDuration1.dataMethod.length){
+      fileHandler3("myArrayDuration_1",emptyTable);
+    }
+    else{fileHandler3("myArrayDuration_1",dataDuration1);} 
+
+    if (!dataDuration2.dataMethod.length){
+      fileHandler3("myArrayDuration_2",emptyTable);
+    }
+    else{fileHandler3("myArrayDuration_2",dataDuration2);}
+
+    if (!dataDuration3.dataMethod.length){
+      fileHandler3("myArrayDuration_3",emptyTable);
+    }
+    else{fileHandler3("myArrayDuration_3",dataDuration3);}
+
+    if (!dataDuration4.dataMethod.length){
+      fileHandler3("myArrayDuration_4",emptyTable);
+    }
+    else{fileHandler3("myArrayDuration_4",dataDuration4);}
+
+// fileHandler3("myArrayAll",dataAll);
+
+// rfileHandler3("myArray500",data2);
 
 
 // var fs = require("fs"),

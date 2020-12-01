@@ -119,21 +119,28 @@
 <body>
 
     <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'All')">All</button>
+      <!-- <button class="tablinks" onclick="openCity(event, 'All')">All</button> -->
       <button class="tablinks" onclick="openCity(event, '404')">404</button>
       <button class="tablinks" onclick="openCity(event, '403')">403</button>
       <button class="tablinks" onclick="openCity(event, '500')">500</button>
+      <button class="tablinks" onclick="openCity(event, 'Duration_1')">Duration 1-2 sec</button>
+      <button class="tablinks" onclick="openCity(event, 'Duration_2')">Duration 2-5 </button>
+      <button class="tablinks" onclick="openCity(event, 'Duration_3')">Duration 5-10</button>
+      <button class="tablinks" onclick="openCity(event, 'Duration_4')">Duration 10-...</button>
 
     </div>
-    <div id="All" class="tabcontent table1">
+<!--     <div id="All" class="tabcontent table1">
         <table class="table table-striped table_sort">
             <thead>
                 <tr  class="bg-info">
                     <th></th>
                     <th>URL</th>
+                    <th></th>
+                    <th></th>
                     <th>totalUser</th>
                     <th>totalRequest</th>
                     <th>MaxDuration</th>
+                    <th>TotalDuration</th>
 
                 </tr>
              </thead>
@@ -142,15 +149,19 @@
                 
             </tbody>
         </table>
-    </div>
-     <div id="404" class="tabcontent">
+    </div> -->
+     <div id="404" class="tabcontent table1">
         <table class="table table-striped">
             <tr  class="bg-info">
                 <th></th>
                 <th>URL</th>
+                <th></th>
+                <th></th>
                 <th>totalUser</th>
                 <th>totalRequest</th>
-                <th>totalDuration</th>
+                <th>MaxDuration</th>
+                <th>TotalDuration</th>
+
 
             </tr>
 
@@ -164,8 +175,11 @@
             <tr  class="bg-info">
                 <th></th>
                 <th>URL</th>
+                <th></th>
+                <th></th>
                 <th>totalUser</th>
                 <th>totalRequest</th>
+                <th>MaxDuration</th>
                 <th>totalDuration</th>
 
             </tr>
@@ -180,8 +194,11 @@
             <tr  class="bg-info">
                 <th></th>
                 <th>URL</th>
+                <th></th>
+                <th></th>
                 <th>totalUser</th>
                 <th>totalRequest</th>
+                <th>MaxDuration</th>
                 <th>totalDuration</th>
 
             </tr>
@@ -191,15 +208,94 @@
             </tbody>
         </table>
     </div>
+     <div id="Duration_1" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable5">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="Duration_2" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable6">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="Duration_3" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable7">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="Duration_4" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable8">
+                
+            </tbody>
+        </table>
+    </div>
 
         <script>
 
 //switch drop-down list           
-            buildTable(myArray404,"myTable1");
+            // buildTable(myArray404,"myTable1");
             buildTable(myArray404,"myTable2");
             buildTable(myArray403,"myTable3");
             buildTable(myArray500,"myTable4");
-            // buildTable(myArray500,myTable3);
+            // buildTable(myArrayDuration_1,"myTable5");
+            // buildTable(myArrayDuration_2,"myTable6");
+            // buildTable(myArrayDuration_3,"myTable7");
+            // buildTable(myArrayDuration_4,"myTable8");
 
 
             $("button").click(function() {
@@ -235,9 +331,12 @@
                                     <!--<td><button class="" value="`+myTable+`b`+i+`,`+myTable+`d`+i+`,`+myTable+`c`+i+`">"+"</button></td>-->
                                     <td><button class="" value="`+myTable+`b`+i+`,`+myTable+`d`+i+`,`+myTable+`c`+i+`">"+"</button></td>
                                     <td>${data2.dataURL[i].URL}</td>
+                                    <th></th>
+                                    <th></th>
                                     <td>${data2.dataURL[i].totalUser}</td>
                                     <td>${data2.dataURL[i].count}</td>
                                     <td>${data2.dataURL[i].maxDuration}</td>
+                                    <td>${data2.dataURL[i].totalDuration}</td>
                                 </tr>
                               
                                 <thead><tr  class="bg-info toggle `+myTable+`b`+i+`">                                  
@@ -245,6 +344,9 @@
                                     <th></th>
                                     <th>User_id</th>
                                     <th>CountRequest</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
                                     <th></th>
                                 </tr></thead>  `
                                
@@ -259,6 +361,9 @@
                                             <td>${data2.dataURL[i].user_id[j][0]}</td>
                                             <td>${data2.dataURL[i].user_id[j][1]}</td>
                                             <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
                                         </tr>`
 
                         table.innerHTML += row;
@@ -271,6 +376,9 @@
                                 <th>Method</th>
                                 <th>Response</th>
                                 <th>Duration</th>
+                                <th>Time</th>
+                                <th>DB_Duration</th>
+                                <th>DB_Queries</th>
                               </tr><thead/>`
 
                     table.innerHTML += row;
@@ -279,9 +387,12 @@
                          var row =   `<tr class="toggle `+myTable+`c`+i+`">
                                         <td></td>
                                         <td><a href="https://sandbox.driveroo.com/admin/clockwork/${data2.dataURL[i].data_id[j][0]}" target="_blank">${data2.dataURL[i].data_id[j][0]}</td>
-                                        <td>${data2.dataURL[i].data_id[j][1]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][1]}</td>
                                        <td>${data2.dataURL[i].data_id[j][2]}</td>
                                        <td>${data2.dataURL[i].data_id[j][3]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][4]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][5]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][6]}</td>
                                     </tr>`
 
                     table.innerHTML += row;
