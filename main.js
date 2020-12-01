@@ -170,7 +170,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
 
        var text4 ="{"+ data.split("] }\n ")[3].split("│ {")[1] +" ] }" ;        
-      console.log(text4);
+      // console.log(text4);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
        // console.log(data.split("} ] }")[2].split("│ {")[1])
@@ -197,7 +197,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
 
        var text5 ="{"+ data.split("] }\n ")[4].split("│ {")[1] +" ] }" ;        
-      console.log(text5);
+      // console.log(text5);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
        // console.log(data.split("} ] }")[2].split("│ {")[1])
@@ -223,7 +223,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
 
        var text6 ="{"+ data.split("] }\n ")[5].split("│ {")[1] +" ] }" ;        
-      console.log(text6);
+      // console.log(text6);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
        // console.log(data.split("} ] }")[2].split("│ {")[1])
@@ -249,7 +249,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
 
        var text7 ="{"+ data.split("] }\n ")[6].split("│ {")[1] +" ] }" ;        
-      console.log(text7);
+      // console.log(text7);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
        // console.log(data.split("} ] }")[2].split("│ {")[1])
@@ -276,7 +276,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
 
        var text8 ="{"+ data.split("] }\n ")[7].split("│ {")[1] +" ] }" ;        
-      console.log(text8);
+      // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
        // console.log(data.split("} ] }")[2].split("│ {")[1])
