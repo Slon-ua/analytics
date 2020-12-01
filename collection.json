@@ -1956,6 +1956,10 @@
 					"script": {
 						"id": "58811709-40cb-4189-9ef6-de38da3b68aa",
 						"exec": [
+							"let fs = require('fs'),",
+							"    path = require(\"path\"),",
+							"    util = require(\"util\");",
+							"",
 							"// console.log(\"==JSON_Var_All==\");",
 							"// console.log(pm.globals.get(\"JSON_Var_All\"));",
 							"console.log(\"==JSON_Var_404==\");",
@@ -1970,14 +1974,16 @@
 							"console.log(\"==JSON_Var_Duration_1-2==\");",
 							"console.log(pm.globals.get(\"JSON_Var_Duration_1-2\"));",
 							"console.log(\"==\");",
+							"",
 							"console.log(\"==JSON_Var_Duration_2-5==\");",
-							"console.log(pm.globals.get(\"JSON_Var_Duration_2-5\"));",
+							"console.log(util.inspect(pm.globals.get(\"JSON_Var_Duration_2-5\"), {maxArrayLength: null, depth:null }));",
+							"// console.log(pm.globals.get(\"JSON_Var_Duration_2-5\"));",
 							"console.log(\"==\");",
-							"// console.log(\"==JSON_Var_Duration_5-10==\");",
-							"console.log(util.inspect(\"==JSON_Var_Duration_5-10==\", {maxArrayLength: null, depth:null }));",
-							"// util.inspect(text6, {maxArrayLength: null, depth:null })",
+							"",
+							"console.log(\"==JSON_Var_Duration_5-10==\");",
 							"console.log(pm.globals.get(\"JSON_Var_Duration_5-10\"));",
 							"console.log(\"==\");",
+							"",
 							"console.log(\"==JSON_Var_Duration_10-...==\");",
 							"console.log(pm.globals.get(\"JSON_Var_Duration_10-...\"));",
 							"console.log(\"==\");"
@@ -2039,7 +2045,7 @@
 	],
 	"variable": [
 		{
-			"id": "0bad834c-2eac-4c49-9a0d-325da22944d3",
+			"id": "3c28ccdb-04d2-488f-87c3-5168e34949bb",
 			"key": "sand",
 			"value": "https://sandbox.driveroo.com"
 		}
