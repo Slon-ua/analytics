@@ -1973,12 +1973,18 @@
 							"console.log(\"==\");",
 							"console.log(\"==JSON_Var_Duration_1-2==\");",
 							"console.log(util.inspect(pm.globals.get(\"JSON_Var_Duration_1-2\"), {maxArrayLength: null, depth:null }));",
+							"console.log(\"==JSON_Var_Duration_1-2==\");",
+							"",
+							"console.log(JSON.stringify(pm.globals.get(\"JSON_Var_Duration_1-2\"), null, 1))",
+							"console.log(\"==JSON_Var_Duration_1-2==\");",
+							"",
+							"console.dir(pm.globals.get(\"JSON_Var_Duration_1-2\"), {'maxArrayLength': null})",
 							"// console.log(pm.globals.get(\"JSON_Var_Duration_1-2\"));",
 							"console.log(\"==\");",
 							"",
 							"console.log(\"==JSON_Var_Duration_2-5==\");",
-							"console.log(util.inspect(pm.globals.get(\"JSON_Var_Duration_2-5\"), {maxArrayLength: null, depth:null }));",
-							"// console.log(pm.globals.get(\"JSON_Var_Duration_2-5\"));",
+							"// console.log(util.inspect(pm.globals.get(\"JSON_Var_Duration_2-5\"), {maxArrayLength: null, depth:null }));",
+							"console.log(pm.globals.get(\"JSON_Var_Duration_2-5\"));",
 							"console.log(\"==\");",
 							"",
 							"console.log(\"==JSON_Var_Duration_5-10==\");",
@@ -2046,7 +2052,7 @@
 	],
 	"variable": [
 		{
-			"id": "c58f9abb-1228-401a-a59a-60aeee684173",
+			"id": "f8e18bc5-aff3-4a25-8d2c-a726dd070006",
 			"key": "sand",
 			"value": "https://sandbox.driveroo.com"
 		}
