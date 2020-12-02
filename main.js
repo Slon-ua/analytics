@@ -233,7 +233,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text5 = replaceAll(text5,'\n   ',"");
       text5 = replaceAll(text5,'\n',"");
       text5 = replaceAll(text5,' ',"");
-                console.log(text5);
+                // console.log(text5);
        
 
         text5 = eval('(' + text5 + ')');
@@ -410,7 +410,7 @@ function fileHandler3(varName,data){
     fs.appendFile('./JSONvar.js', "let "+varName+" = " + JSON.stringify(data, null, '\t') +";\n", (err) => {
         if(err) throw err;
         console.log('Data has been added! '+varName);
-                 // sleep(5000);
+                 sleep(5000);
     });
 }
 
