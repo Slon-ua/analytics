@@ -486,38 +486,40 @@ if (!data403.dataMethod.length){
   fileHandler3("myArray403",emptyTable);
 }
 else{fileHandler3("myArray403",data403);}
-                 sleep(5000);
+                 sleep(2000);
 
-    console.log("!!!!!! _ "+dataDuration1_1.dataMethod.length)
-    fileHandler3("myArrayDuration_1",dataDuration1);
-    fileHandler3("myArrayDuration_2",dataDuration2);
-    fileHandler3("myArrayDuration_3",dataDuration3);
-    fileHandler3("myArrayDuration_4",dataDuration4);
-    //     if (!dataDuration1_1.dataMethod.length){
-    //       fileHandler3("myArrayDuration_1",emptyTable);
-    //     }
-    //     else{fileHandler3("myArrayDuration_1",dataDuration1);} 
+    console.log("!!!!!! _ "+dataDuration1.dataMethod.length)
 
-    // console.log("!!!!!! _ "+dataDuration2_1.dataMethod.length)
+    // fileHandler3("myArrayDuration_1",dataDuration1);
+    // fileHandler3("myArrayDuration_2",dataDuration2);
+    // fileHandler3("myArrayDuration_3",dataDuration3);
+    // fileHandler3("myArrayDuration_4",dataDuration4);
 
-    //     if (!dataDuration2_1.dataMethod.length){
-    //       fileHandler3("myArrayDuration_2",emptyTable);
-    //     }
-    //     else{fileHandler3("myArrayDuration_2",dataDuration2);}
+        if (!dataDuration1.dataMethod.length){
+          fileHandler3("myArrayDuration_1",emptyTable);
+        }
+        else{fileHandler3("myArrayDuration_1",dataDuration1);} 
 
-    // console.log("!!!!!! _ "+dataDuration3_1.dataMethod.length)
+    console.log("!!!!!! _ "+dataDuration2.dataMethod.length)
 
-    //     if (!dataDuration3_1.dataMethod.length){
-    //       fileHandler3("myArrayDuration_3",emptyTable);
-    //     }
-    //     else{fileHandler3("myArrayDuration_3",dataDuration3);}
+        if (!dataDuration2.dataMethod.length){
+          fileHandler3("myArrayDuration_2",emptyTable);
+        }
+        else{fileHandler3("myArrayDuration_2",dataDuration2);}
 
-    // console.log("!!!!!! _ "+dataDuration4_1.dataMethod.length)
+    console.log("!!!!!! _ "+dataDuration3.dataMethod.length)
 
-    //     if (!dataDuration4_1.dataMethod.length){
-    //       fileHandler3("myArrayDuration_4",emptyTable);
-    //     }
-    //     else{fileHandler3("myArrayDuration_4",dataDuration4);}
+        if (!dataDuration3.dataMethod.length){
+          fileHandler3("myArrayDuration_3",emptyTable);
+        }
+        else{fileHandler3("myArrayDuration_3",dataDuration3);}
+
+    console.log("!!!!!! _ "+dataDuration4.dataMethod.length)
+
+        if (!dataDuration4.dataMethod.length){
+          fileHandler3("myArrayDuration_4",emptyTable);
+        }
+        else{fileHandler3("myArrayDuration_4",dataDuration4);}
 
 // fileHandler3("myArrayAll",dataAll);
 
