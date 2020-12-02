@@ -9,8 +9,8 @@ let fs = require('fs'),
 // }
 
 function sleep(ms) {
-ms += new Date().getTime();
-while (new Date() < ms){}
+  ms += new Date().getTime();
+  while (new Date() < ms){}
 } 
 // function fileHandler(){
 
@@ -486,6 +486,7 @@ if (!data403.dataMethod.length){
   fileHandler3("myArray403",emptyTable);
 }
 else{fileHandler3("myArray403",data403);}
+                 sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration1_1.dataMethod.length)
     fileHandler3("myArrayDuration_1",dataDuration1);
