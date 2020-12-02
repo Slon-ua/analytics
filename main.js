@@ -477,17 +477,19 @@ if (!data500.dataMethod.length){
   fileHandler3("myArray500",emptyTable);
 }
 else{fileHandler3("myArray500",data500);}
+                 sleep(5000);
 
 if (!data404.dataMethod.length){
   fileHandler3("myArray404",emptyTable);
 }
 else{fileHandler3("myArray404",data404);}
+                 sleep(5000);
 
 if (!data403.dataMethod.length){
   fileHandler3("myArray403",emptyTable);
 }
 else{fileHandler3("myArray403",data403);}
-                 sleep(2000);
+                 sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration1.dataMethod.length)
 
@@ -500,6 +502,7 @@ else{fileHandler3("myArray403",data403);}
           fileHandler3("myArrayDuration_1",emptyTable);
         }
         else{fileHandler3("myArrayDuration_1",dataDuration1);} 
+                 sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration2.dataMethod.length)
 
@@ -507,6 +510,7 @@ else{fileHandler3("myArray403",data403);}
           fileHandler3("myArrayDuration_2",emptyTable);
         }
         else{fileHandler3("myArrayDuration_2",dataDuration2);}
+                 sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration3.dataMethod.length)
 
@@ -514,6 +518,7 @@ else{fileHandler3("myArray403",data403);}
           fileHandler3("myArrayDuration_3",emptyTable);
         }
         else{fileHandler3("myArrayDuration_3",dataDuration3);}
+                 sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration4.dataMethod.length)
 
@@ -521,6 +526,7 @@ else{fileHandler3("myArray403",data403);}
           fileHandler3("myArrayDuration_4",emptyTable);
         }
         else{fileHandler3("myArrayDuration_4",dataDuration4);}
+                 sleep(5000);
 
 // fileHandler3("myArrayAll",dataAll);
 
