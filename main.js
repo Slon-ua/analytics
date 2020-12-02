@@ -204,7 +204,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.5 ");
 
 
-       var text5 ="{ \""+ data.split("]\\n}")[0].split("{\\n \"")[1] +" ] }" ;        
+       var text5 ="{\""+ data.split("]\\n}")[0].split("{\\n \"")[1] +" ] }" ;        
        // var text5 ="{"+ data.split("{\\n \"")[0] +" ] }" ;        
        // var text5 ="{"+ data.split("]\\n}")[0]+" ] }" ;        
        // console.log(text5);
