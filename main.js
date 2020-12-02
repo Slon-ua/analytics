@@ -204,7 +204,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.5 ");
 
 
-       var text5 ="{\""+ data.split("}'")[0].split("{\\n \"")[1] +"}'" ;        
+       var text5 ="{\""+ data.split("}'")[0].split("{\\n \"")[1] +"}" ;        
        // var text5 ="{"+ data.split("{\\n \"")[0] +" ] }" ;        
        // var text5 ="{"+ data.split("]\\n}")[0]+" ] }" ;        
        // console.log(text5);
@@ -233,7 +233,8 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text5 = replaceAll(text5,'\n   ',"");
       text5 = replaceAll(text5,'\n',"");
       text5 = replaceAll(text5,' ',"");
-                // console.log(text5);
+                 
+                 // console.log(text5);
        
 
         text5 = eval('(' + text5 + ')');
@@ -252,7 +253,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.6 ");
 
 
-       var text6 ="{\""+ data.split("}'")[1].split("{\\n \"")[1] +"}'" 
+       var text6 ="{\""+ data.split("}'")[1].split("{\\n \"")[1] +"}" 
 
         // text6 =util.inspect("{"+ data.split("] }\n ")[5].split("│ {")[1] +" ] }", {'maxArrayLength': null})       
       // console.log(text6);
@@ -294,7 +295,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.7 ");
 
 
-       var text7 ="{\""+ data.split("}'")[2].split("{\\n \"")[1] +"}'" 
+       var text7 ="{\""+ data.split("}'")[2].split("{\\n \"")[1] +"}" 
       // console.log(text7);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -331,7 +332,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       console.log("_______________________________ 2.8 ");
 
 
-       var text8 ="{\""+ data.split("}'")[3].split("{\\n \"")[1] +"}'" 
+       var text8 ="{\""+ data.split("}'")[3].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
