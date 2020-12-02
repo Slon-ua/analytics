@@ -1972,7 +1972,7 @@
 							"console.log(pm.globals.get(\"JSON_Var_403\"));",
 							"console.log(\"==\");",
 							"console.log(\"==JSON_Var_Duration_1-2==\");",
-							"// console.log(util.inspect(pm.globals.get(\"JSON_Var_Duration_1-2\"), {maxArrayLength: null, depth:null }));",
+							" console.log(util.inspect(pm.globals.get(\"JSON_Var_Duration_1-2\"), {maxArrayLength: null, depth:null }));",
 							"// console.log(\"==JSON_Var_Duration_1-2==\");",
 							"",
 							"console.log(JSON.stringify(pm.globals.get(\"JSON_Var_Duration_1-2\"), null, 1))",
@@ -2058,7 +2058,7 @@
 	],
 	"variable": [
 		{
-			"id": "6f92f2fc-38f0-43dd-a414-16c00224c569",
+			"id": "8a4bb2da-5501-455e-95f8-680d079309d4",
 			"key": "sand",
 			"value": "https://sandbox.driveroo.com"
 		}
