@@ -60,7 +60,10 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
    // let text ="{"+ data.split("}'==")[0].split("=='{")[1] +"}" ;
 
-     let text ="{"+ data.split("] }\n ")[0].split("│ {")[1] +" ] }" ;
+     // let text ="{"+ data.split("] }\n ")[0].split("│ {")[1] +" ] }" ;
+
+     let text ="{\""+ data.split("}'")[0].split("{\\n \"")[1] +"}" ;
+
      // console.log(text);
                // sleep(5000);
 
@@ -117,7 +120,10 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       // console.log(data1);
 
 
-      var text2 ="{"+ data.split("] }\n ")[1].split("│ {")[1] +" ] }";        
+      // var text2 ="{"+ data.split("] }\n ")[1].split("│ {")[1] +" ] }";   
+
+      var text2 ="{\""+ data.split("}'")[1].split("{\\n \"")[1] +"}" ;      
+  
   // console.log(text2);
       // console.log(data.split("} ] }")[1]);
       // console.log(data.split("│ {")[2]);
@@ -127,6 +133,10 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.2 ");
 
 
+    text2 = replaceAll(text2,'\\\\n   ',"");
+      text2 = replaceAll(text2,'\\\\n','');
+      text2 = replaceAll(text2,'\\\\','');
+      text2 = replaceAll(text2,'│ n','');
 
     // let param1 =  "} ] }";
     // let param2 = "│ {";
@@ -136,7 +146,9 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text2 = replaceAll(text2,"'",'"');
       text2 = replaceAll(text2,'n\n   d',"nd")    
       text2 = replaceAll(text2,'\n   ',"");
+      text2 = replaceAll(text2,'\n',"");
       text2 = replaceAll(text2,' ',"");
+      text2 = replaceAll(text2,'//',"/");
 
       text2 = eval('(' + text2 + ')');
       // data404 = JSON.stringify(text2);
@@ -150,11 +162,19 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.3 ");
 
 
-       var text3 ="{"+ data.split("] }\n ")[2].split("│ {")[1] +" ] }" ;        
+       // var text3 ="{"+ data.split("] }\n ")[2].split("│ {")[1] +" ] }" ;
+
+       var text3 ="{\""+ data.split("}'")[2].split("{\\n \"")[1] +"}" ;
+
       // console.log(text3);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+    text3 = replaceAll(text3,'\\\\n   ',"");
+      text3 = replaceAll(text3,'\\\\n','');
+      text3 = replaceAll(text3,'\\\\','');
+      text3 = replaceAll(text3,'│ n','');
 
 
     //  param1 =  "│ {";
@@ -165,7 +185,9 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text3 = replaceAll(text3,"'",'"');
       text3 = replaceAll(text3,'n\n   d',"nd")    
       text3 = replaceAll(text3,'\n   ',"");
+      text3 = replaceAll(text3,'\n',"");
       text3 = replaceAll(text3,' ',"");
+      text3 = replaceAll(text3,'//',"/");
 
        text3 = eval('(' + text3 + ')');
       // data500 = JSON.stringify(text3);
@@ -177,12 +199,19 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.4 ");
 
 
-       var text4 ="{"+ data.split("] }\n ")[3].split("│ {")[1] +" ] }" ;        
+       // var text4 ="{"+ data.split("] }\n ")[3].split("│ {")[1] +" ] }" ;  
+
+       var text4 ="{\""+ data.split("}'")[3].split("{\\n \"")[1] +"}" ;
+
       // console.log(text4);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
        // console.log(data.split("} ] }")[2].split("│ {")[1])
 
+    text4 = replaceAll(text4,'\\\\n   ',"");
+      text4 = replaceAll(text4,'\\\\n','');
+      text4 = replaceAll(text4,'\\\\','');
+      text4 = replaceAll(text4,'│ n','');
 
     //  param1 =  "│ {";
     //  param2 = "} }";
@@ -192,7 +221,9 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text4 = replaceAll(text4,"'",'"');
       text4 = replaceAll(text4,'n\n   d',"nd")    
       text4 = replaceAll(text4,'\n   ',"");
+      text4 = replaceAll(text4,'\n',"");
       text4 = replaceAll(text4,' ',"");
+      text4 = replaceAll(text4,'//',"/");
 
        text4 = eval('(' + text4 + ')');
       // data403 = JSON.stringify(text4);
@@ -204,7 +235,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.5 ");
 
 
-       var text5 ="{\""+ data.split("}'")[0].split("{\\n \"")[1] +"}" ;        
+       var text5 ="{\""+ data.split("}'")[4].split("{\\n \"")[1] +"}" ;        
        // var text5 ="{"+ data.split("{\\n \"")[0] +" ] }" ;        
        // var text5 ="{"+ data.split("]\\n}")[0]+" ] }" ;        
        // console.log(text5);
@@ -233,6 +264,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text5 = replaceAll(text5,'\n   ',"");
       text5 = replaceAll(text5,'\n',"");
       text5 = replaceAll(text5,' ',"");
+      text5 = replaceAll(text5,'//',"/");
                  
                  // console.log(text5);
        
@@ -253,7 +285,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.6 ");
 
 
-       var text6 ="{\""+ data.split("}'")[1].split("{\\n \"")[1] +"}" 
+       var text6 ="{\""+ data.split("}'")[5].split("{\\n \"")[1] +"}" 
 
         // text6 =util.inspect("{"+ data.split("] }\n ")[5].split("│ {")[1] +" ] }", {'maxArrayLength': null})       
       // console.log(text6);
@@ -277,6 +309,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text6 = replaceAll(text6,'\n   ',"");
       text6 = replaceAll(text6,'\n',"");
       text6 = replaceAll(text6,' ',"");
+      text6 = replaceAll(text6,'//',"/");
 
       // text6 = eval('(' + JSON.stringify(text6, null, 1) + ')');
       // data403 = JSON.stringify(text4);
@@ -295,7 +328,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.7 ");
 
 
-       var text7 ="{\""+ data.split("}'")[2].split("{\\n \"")[1] +"}" 
+       var text7 ="{\""+ data.split("}'")[6].split("{\\n \"")[1] +"}" 
       // console.log(text7);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -317,6 +350,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text7 = replaceAll(text7,'\n   ',"");
       text7 = replaceAll(text7,'\n',"");
       text7 = replaceAll(text7,' ',"");
+      text7 = replaceAll(text7,'//',"/");
 
        // text7 = eval('(' + text7 + ')');
       // data403 = JSON.stringify(text4);
@@ -332,7 +366,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       console.log("_______________________________ 2.8 ");
 
 
-       var text8 ="{\""+ data.split("}'")[3].split("{\\n \"")[1] +"}" 
+       var text8 ="{\""+ data.split("}'")[7].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -354,6 +388,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       text8 = replaceAll(text8,'\n   ',"");
       text8 = replaceAll(text8,'\n',"");
       text8 = replaceAll(text8,' ',"");
+      text8 = replaceAll(text8,'//',"/");
 
        // text8 = eval('(' + text8 + ')');
       // data403 = JSON.stringify(text4);
