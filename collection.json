@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "e85f9824-2bab-4801-9a2e-a0c017f8d7db",
-		"name": "TEST",
+		"name": "Analytics Driveroo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -1168,7 +1168,9 @@
 							"",
 							"pm.test(\"Your test name\", function () {",
 							"    let jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].id).to.be.a(\"string\");",
+							"    // pm.expect(jsonData.data).to.be.an(\"object\");",
+							"    // pm.expect(jsonData.data).to.be.empty;",
+							"    pm.expect(jsonData).to.be.not.empty;",
 							"});",
 							"",
 							""
@@ -1397,7 +1399,8 @@
 							"",
 							"pm.test(\"Your test name\", function () {",
 							"    let jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].id).to.be.a(\"string\");",
+							"    // pm.expect(jsonData.data[0].id).to.be.a(\"string\");",
+							"    pm.expect(jsonData).to.be.not.empty;",
 							"});",
 							"",
 							""
@@ -1626,7 +1629,9 @@
 							"",
 							"pm.test(\"Your test name\", function () {",
 							"    let jsonData = pm.response.json();",
-							"    pm.expect(jsonData.data[0].id).to.be.a(\"string\");",
+							"    // pm.expect(jsonData.data[0].id).to.be.a(\"string\");    ",
+							"    pm.expect(jsonData).to.be.not.empty;",
+							"",
 							"});",
 							"",
 							""
@@ -2067,7 +2072,7 @@
 	],
 	"variable": [
 		{
-			"id": "67619b2b-3e60-47a0-a432-d14a05e06d0a",
+			"id": "a4f388af-1d1a-4ceb-b48f-ebb381c7e9f9",
 			"key": "sand",
 			"value": "https://sandbox.driveroo.com"
 		}
