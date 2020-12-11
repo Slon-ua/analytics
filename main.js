@@ -33,12 +33,12 @@ function sleep(ms) {
 // fileHandler2();
 
 
-let qwe = path.join(__dirname, "helpers", "../../../jobs/Analytics/builds/"+process.env.BUILD_NUMBER+"/log");
-data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
-      if (err) {
-        throw err;
-      }
-});
+// let qwe = path.join(__dirname, "helpers", "../../../jobs/Analytics/builds/"+process.env.BUILD_NUMBER+"/log");
+// data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+//       if (err) {
+//         throw err;
+//       }
+// });
 
 // let qwe = path.join(__dirname, "helpers", "../../consoleText2.txt");
 // data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
@@ -47,12 +47,12 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 //       }
 // });
 
-// let qwe = path.join(__dirname, "helpers", "../consoleText2.txt");
-// data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
-//       if (err) {
-//         throw err;
-//       }
-// });
+let qwe = path.join(__dirname, "helpers", "../consoleText2.txt");
+data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+      if (err) {
+        throw err;
+      }
+});
 
   
   console.log("_______________________________ 2 ");
@@ -415,6 +415,286 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
 
          // sleep(2000);
+         
+               console.log("___________PROD________________ 2.9 ");
+
+
+       var text9 ="{\""+ data.split("}'")[9].split("{\\n \"")[1] +"}" 
+      // console.log(text8);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text9 = replaceAll(text9,'\\\\n   ',"");
+      text9 = replaceAll(text9,'\\\\n','');
+      text9 = replaceAll(text9,'\\\\','');
+      text9 = replaceAll(text9,'│ n','');
+
+    text9 = replaceAll(text9,'│',"");
+      // text8 = replaceAll(text8,"'",'"');
+      text9 = replaceAll(text9,'n\n   d',"nd")    
+      text9 = replaceAll(text9,'\n   ',"");
+      text9 = replaceAll(text9,'\n',"");
+      text9 = replaceAll(text9,' ',"");
+      text9 = replaceAll(text9,'//',"/");
+      // text8 = replaceAll(text8,'\\("',"\\('");
+      // text8 = replaceAll(text8,'"\\)',"'\\)");
+
+       // text8 = eval('(' + text8 + ')');
+      // data403 = JSON.stringify(text4);
+      
+            text9 = eval('(' + text9 + ')');
+            data404_Prod = text9
+      // console.log(data403.dataMethod[0].count);
+      // console.log(text8);
+
+
+         // sleep(2000);
+         
+               console.log("___________PROD________________ 2.10 ");
+
+
+       var text10 ="{\""+ data.split("}'")[10].split("{\\n \"")[1] +"}" 
+      // console.log(text8);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text10 = replaceAll(text10,'\\\\n   ',"");
+      text10 = replaceAll(text10,'\\\\n','');
+      text10 = replaceAll(text10,'\\\\','');
+      text10 = replaceAll(text10,'│ n','');
+
+    text10 = replaceAll(text10,'│',"");
+      // text8 = replaceAll(text8,"'",'"');
+      text10 = replaceAll(text10,'n\n   d',"nd")    
+      text10 = replaceAll(text10,'\n   ',"");
+      text10 = replaceAll(text10,'\n',"");
+      text10 = replaceAll(text10,' ',"");
+      text10 = replaceAll(text10,'//',"/");
+      // text8 = replaceAll(text8,'\\("',"\\('");
+      // text8 = replaceAll(text8,'"\\)',"'\\)");
+
+       // text8 = eval('(' + text8 + ')');
+      // data403 = JSON.stringify(text4);
+      
+            text10 = eval('(' + text10 + ')');
+            data500_Prod = text10
+      // console.log(data403.dataMethod[0].count);
+      // console.log(text8);
+
+
+         // sleep(2000);
+         
+               console.log("___________PROD________________ 2.11 ");
+
+
+       var text11 ="{\""+ data.split("}'")[11].split("{\\n \"")[1] +"}" 
+      // console.log(text8);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text11 = replaceAll(text11,'\\\\n   ',"");
+      text11 = replaceAll(text11,'\\\\n','');
+      text11 = replaceAll(text11,'\\\\','');
+      text11 = replaceAll(text11,'│ n','');
+
+    text11 = replaceAll(text11,'│',"");
+      // text8 = replaceAll(text8,"'",'"');
+      text11 = replaceAll(text11,'n\n   d',"nd")    
+      text11 = replaceAll(text11,'\n   ',"");
+      text11 = replaceAll(text11,'\n',"");
+      text11 = replaceAll(text11,' ',"");
+      text11 = replaceAll(text11,'//',"/");
+      // text8 = replaceAll(text8,'\\("',"\\('");
+      // text8 = replaceAll(text8,'"\\)',"'\\)");
+
+       // text8 = eval('(' + text8 + ')');
+      // data403 = JSON.stringify(text4);
+      
+            text11 = eval('(' + text11 + ')');
+            data403_Prod = text11
+      // console.log(data403.dataMethod[0].count);
+      // console.log(text8);
+
+
+         // sleep(2000);
+         
+               console.log("___________PROD________________ 2.12 ");
+
+
+       var text12 ="{\""+ data.split("}'")[12].split("{\\n \"")[1] +"}" 
+      // console.log(text8);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text12 = replaceAll(text12,'\\\\n   ',"");
+      text12 = replaceAll(text12,'\\\\n','');
+      text12 = replaceAll(text12,'\\\\','');
+      text12 = replaceAll(text12,'│ n','');
+
+    text12 = replaceAll(text12,'│',"");
+      // text8 = replaceAll(text8,"'",'"');
+      text12 = replaceAll(text12,'n\n   d',"nd")    
+      text12 = replaceAll(text12,'\n   ',"");
+      text12 = replaceAll(text12,'\n',"");
+      text12 = replaceAll(text12,' ',"");
+      text12 = replaceAll(text12,'//',"/");
+      // text8 = replaceAll(text8,'\\("',"\\('");
+      // text8 = replaceAll(text8,'"\\)',"'\\)");
+
+       // text8 = eval('(' + text8 + ')');
+      // data403 = JSON.stringify(text4);
+      
+            text12 = eval('(' + text12 + ')');
+            dataDuration1_Prod = text12
+      // console.log(data403.dataMethod[0].count);
+      // console.log(text8);
+
+
+         // sleep(2000);
+         
+               console.log("___________PROD________________ 2.13 ");
+
+
+       var text13 ="{\""+ data.split("}'")[13].split("{\\n \"")[1] +"}" 
+      // console.log(text8);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text13 = replaceAll(text13,'\\\\n   ',"");
+      text13 = replaceAll(text13,'\\\\n','');
+      text13 = replaceAll(text13,'\\\\','');
+      text13 = replaceAll(text13,'│ n','');
+
+    text13 = replaceAll(text13,'│',"");
+      // text8 = replaceAll(text8,"'",'"');
+      text13 = replaceAll(text13,'n\n   d',"nd")    
+      text13 = replaceAll(text13,'\n   ',"");
+      text13 = replaceAll(text13,'\n',"");
+      text13 = replaceAll(text13,' ',"");
+      text13 = replaceAll(text13,'//',"/");
+      // text8 = replaceAll(text8,'\\("',"\\('");
+      // text8 = replaceAll(text8,'"\\)',"'\\)");
+
+       // text8 = eval('(' + text8 + ')');
+      // data403 = JSON.stringify(text4);
+      
+            text13 = eval('(' + text13 + ')');
+            dataDuration2_Prod = text13
+      // console.log(data403.dataMethod[0].count);
+      // console.log(text8);
+
+
+         // sleep(2000);
+         
+               console.log("___________PROD________________ 2.14 ");
+
+
+       var text14 ="{\""+ data.split("}'")[14].split("{\\n \"")[1] +"}" 
+      // console.log(text8);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text14 = replaceAll(text14,'\\\\n   ',"");
+      text14 = replaceAll(text14,'\\\\n','');
+      text14 = replaceAll(text14,'\\\\','');
+      text14 = replaceAll(text14,'│ n','');
+
+    text14 = replaceAll(text14,'│',"");
+      // text8 = replaceAll(text8,"'",'"');
+      text14 = replaceAll(text14,'n\n   d',"nd")    
+      text14 = replaceAll(text14,'\n   ',"");
+      text14 = replaceAll(text14,'\n',"");
+      text14 = replaceAll(text14,' ',"");
+      text14 = replaceAll(text14,'//',"/");
+      // text8 = replaceAll(text8,'\\("',"\\('");
+      // text8 = replaceAll(text8,'"\\)',"'\\)");
+
+       // text8 = eval('(' + text8 + ')');
+      // data403 = JSON.stringify(text4);
+      
+            text14 = eval('(' + text14 + ')');
+            dataDuration3_Prod = text14
+      // console.log(data403.dataMethod[0].count);
+      // console.log(text8);
+
+
+         // sleep(2000);
+         
+               console.log("___________PROD________________ 2.15 ");
+
+
+       var text15 ="{\""+ data.split("}'")[15].split("{\\n \"")[1] +"}" 
+      // console.log(text8);
+      // console.log(data.split("} ] }")[2]);
+      // console.log(data.split("│ {")[4]);
+       // console.log(data.split("} ] }")[2].split("│ {")[1])
+
+
+    //  param1 =  "│ {";
+    //  param2 = "} }";
+    // var text2 ="{"+ text3.split(param1)[1].split(param2)[0] +"}}";
+
+    text15 = replaceAll(text15,'\\\\n   ',"");
+      text15 = replaceAll(text15,'\\\\n','');
+      text15 = replaceAll(text15,'\\\\','');
+      text15 = replaceAll(text15,'│ n','');
+
+    text15 = replaceAll(text15,'│',"");
+      // text8 = replaceAll(text8,"'",'"');
+      text15 = replaceAll(text15,'n\n   d',"nd")    
+      text15 = replaceAll(text15,'\n   ',"");
+      text15 = replaceAll(text15,'\n',"");
+      text15 = replaceAll(text15,' ',"");
+      text15 = replaceAll(text15,'//',"/");
+      // text8 = replaceAll(text8,'\\("',"\\('");
+      // text8 = replaceAll(text8,'"\\)',"'\\)");
+
+       // text8 = eval('(' + text8 + ')');
+      // data403 = JSON.stringify(text4);
+      
+            text15 = eval('(' + text15 + ')');
+            dataDuration4_Prod = text15
+      // console.log(data403.dataMethod[0].count);
+      // console.log(text8);
+
+
+         // sleep(2000);
 
 console.log("_______________________________ 3 ");
 
@@ -456,14 +736,20 @@ fileHandler4();
 
 //   console.log(data223);
 
-function fileHandler3(varName,data){
+function fileHandlerSand(varName,data){
     fs.appendFile('./JSONvar.js', "let "+varName+" = " + JSON.stringify(data, null, '\t') +";\n", (err) => {
         if(err) throw err;
         console.log('Data has been added! '+varName);
                  sleep(5000);
     });
 }
-
+function fileHandlerProd(varName,data){
+    fs.appendFile('./JSONvar2.js', "let "+varName+" = " + JSON.stringify(data, null, '\t') +";\n", (err) => {
+        if(err) throw err;
+        console.log('Data has been added! '+varName);
+                 sleep(5000);
+    });
+}
 // setTimeout(fileHandler3("myArray500",data500), 3000);
 // setTimeout(fileHandler3("myArray404",data404), 3000);
 // setTimeout(fileHandler3("myArray403",data403), 3000);
@@ -523,21 +809,21 @@ let emptyTable = {"dataMethod": [
 
 
 if (!data500.dataMethod.length){
-  fileHandler3("myArray500",emptyTable);
+  fileHandlerSand("myArray500",emptyTable);
 }
-else{fileHandler3("myArray500",data500);}
+else{fileHandlerSand("myArray500",data500);}
                  sleep(5000);
 
 if (!data404.dataMethod.length){
-  fileHandler3("myArray404",emptyTable);
+  fileHandlerSand("myArray404",emptyTable);
 }
-else{fileHandler3("myArray404",data404);}
+else{fileHandlerSand("myArray404",data404);}
                  sleep(5000);
 
 if (!data403.dataMethod.length){
-  fileHandler3("myArray403",emptyTable);
+  fileHandlerSand("myArray403",emptyTable);
 }
-else{fileHandler3("myArray403",data403);}
+else{fileHandlerSand("myArray403",data403);}
                  sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration1.dataMethod.length)
@@ -548,34 +834,95 @@ else{fileHandler3("myArray403",data403);}
     // fileHandler3("myArrayDuration_4",dataDuration4);
 
         if (!dataDuration1.dataMethod.length){
-          fileHandler3("myArrayDuration_1",emptyTable);
+          fileHandlerSand("myArrayDuration_1",emptyTable);
         }
-        else{fileHandler3("myArrayDuration_1",dataDuration1);} 
+        else{fileHandlerSand("myArrayDuration_1",dataDuration1);} 
                  sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration2.dataMethod.length)
 
         if (!dataDuration2.dataMethod.length){
-          fileHandler3("myArrayDuration_2",emptyTable);
+          fileHandlerSand("myArrayDuration_2",emptyTable);
         }
-        else{fileHandler3("myArrayDuration_2",dataDuration2);}
+        else{fileHandlerSand("myArrayDuration_2",dataDuration2);}
                  sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration3.dataMethod.length)
 
         if (!dataDuration3.dataMethod.length){
-          fileHandler3("myArrayDuration_3",emptyTable);
+          fileHandlerSand("myArrayDuration_3",emptyTable);
         }
-        else{fileHandler3("myArrayDuration_3",dataDuration3);}
+        else{fileHandlerSand("myArrayDuration_3",dataDuration3);}
                  sleep(5000);
 
     console.log("!!!!!! _ "+dataDuration4.dataMethod.length)
 
         if (!dataDuration4.dataMethod.length){
-          fileHandler3("myArrayDuration_4",emptyTable);
+          fileHandlerSand("myArrayDuration_4",emptyTable);
         }
-        else{fileHandler3("myArrayDuration_4",dataDuration4);}
+        else{fileHandlerSand("myArrayDuration_4",dataDuration4);}
                  sleep(5000);
+
+
+
+//!!!!!!!!!!!!!!! PROD !!!!!!!!!
+
+if (!data500_Prod.dataMethod.length){
+  fileHandlerProd("myArray500_Prod",emptyTable);
+}
+else{fileHandlerProd("myArray500_Prod",data500_Prod);}
+                 sleep(5000);
+
+if (!data404_Prod.dataMethod.length){
+  fileHandlerProd("myArray404_Prod",emptyTable);
+}
+else{fileHandlerProd("myArray404_Prod",data404_Prod);}
+                 sleep(5000);
+
+if (!data403_Prod.dataMethod.length){
+  fileHandlerProd("myArray403_Prod",emptyTable);
+}
+else{fileHandlerProd("myArray403_Prod",data403_Prod);}
+                 sleep(5000);
+
+    console.log("!!!!!! _ "+dataDuration1_Prod.dataMethod.length)
+
+    // fileHandler3("myArrayDuration_1",dataDuration1);
+    // fileHandler3("myArrayDuration_2",dataDuration2);
+    // fileHandler3("myArrayDuration_3",dataDuration3);
+    // fileHandler3("myArrayDuration_4",dataDuration4);
+
+        if (!dataDuration1_Prod.dataMethod.length){
+          fileHandlerProd("myArrayDuration_1_Prod",emptyTable);
+        }
+        else{fileHandlerProd("myArrayDuration_1_Prod",dataDuration1_Prod);} 
+                 sleep(5000);
+
+    console.log("!!!!!! _ "+dataDuration2_Prod.dataMethod.length)
+
+        if (!dataDuration2_Prod.dataMethod.length){
+          fileHandlerProd("myArrayDuration_2_Prod",emptyTable);
+        }
+        else{fileHandlerProd("myArrayDuration_2_Prod",dataDuration2_Prod);}
+                 sleep(5000);
+
+    console.log("!!!!!! _ "+dataDuration3_Prod.dataMethod.length)
+
+        if (!dataDuration3_Prod.dataMethod.length){
+          fileHandlerProd("myArrayDuration_3_Prod",emptyTable);
+        }
+        else{fileHandlerProd("myArrayDuration_3_Prod",dataDuration3_Prod);}
+                 sleep(5000);
+
+    console.log("!!!!!! _ "+dataDuration4_Prod.dataMethod.length)
+
+        if (!dataDuration4_Prod.dataMethod.length){
+          fileHandlerProd("myArrayDuration_4_Prod",emptyTable);
+        }
+        else{fileHandlerProd("myArrayDuration_4_Prod",dataDuration4_Prod);}
+                 sleep(5000);
+
+
 
 // fileHandler3("myArrayAll",dataAll);
 

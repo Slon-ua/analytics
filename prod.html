@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+         <script src="./JSONvar2.js"></script>
+        
+
+        <style>
+/*table*/
+            th{
+                color:#fff;
+            }
+
+            .toggle{    display: none;
+            }
+
+            .foo td {
+                padding: 1em;
+                border: 1px solid black;
+            }
+            .myButton {
+                background:url(./arrow.png) no-repeat;
+                cursor:pointer;
+                width: 20%;
+                height: 20%;
+            }
+
+/*tab*/
+            body {font-family: Arial;}
+
+            /* Style the tab */
+            .tab {
+                overflow: hidden;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+            }
+
+            /* Style the buttons inside the tab */
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+            /* Style the tab content */
+            .tabcontent {
+                display: none;
+                /*padding: 6px 12px;*/
+                border: 1px solid #ccc;
+                border-top: none;
+            }
+            .table1{
+                display: block;
+            }
+
+/*sort*/
+            /*.table_sort table {
+                border-collapse: collapse;
+            }
+
+            .table_sort th {
+                color: #ffebcd;
+                background: #008b8b;
+                cursor: pointer;
+            }
+
+            .table_sort td,
+            .table_sort th {
+                width: 150px;
+                height: 40px;
+                text-align: center;
+                border: 2px solid #846868;
+            }
+
+            .table_sort tbody tr:nth-child(even) {
+                background: #e3e3e3;
+            }
+*/
+            th.sorted[data-order="1"],
+            th.sorted[data-order="-1"] {
+                position: relative;
+            }
+
+            th.sorted[data-order="1"]::after,
+            th.sorted[data-order="-1"]::after {
+                right: 8px;
+                position: absolute;
+            }
+
+            th.sorted[data-order="-1"]::after {
+                content: "▼"
+            }
+
+            th.sorted[data-order="1"]::after {
+                content: "▲"
+            }
+
+        </style>
+
+</head>
+<body>
+
+    <div class="tab">
+      <!-- <button class="tablinks" onclick="openCity(event, 'All')">All</button> -->
+      <button class="tablinks" onclick="openCity(event, '404')">404</button>
+      <button class="tablinks" onclick="openCity(event, '403')">403</button>
+      <button class="tablinks" onclick="openCity(event, '500')">500</button>
+      <button class="tablinks" onclick="openCity(event, 'Duration_1')">Duration 1-2 sec</button>
+      <button class="tablinks" onclick="openCity(event, 'Duration_2')">Duration 2-5 </button>
+      <button class="tablinks" onclick="openCity(event, 'Duration_3')">Duration 5-10</button>
+      <button class="tablinks" onclick="openCity(event, 'Duration_4')">Duration 10-...</button>
+
+    </div>
+<!--     <div id="All" class="tabcontent table1">
+        <table class="table table-striped table_sort">
+            <thead>
+                <tr  class="bg-info">
+                    <th></th>
+                    <th>URL</th>
+                    <th></th>
+                    <th></th>
+                    <th>totalUser</th>
+                    <th>totalRequest</th>
+                    <th>MaxDuration</th>
+                    <th>TotalDuration</th>
+
+                </tr>
+             </thead>
+
+            <tbody class="myTable1">
+                
+            </tbody>
+        </table>
+    </div> -->
+     <div id="404" class="tabcontent table1">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>TotalDuration</th>
+
+
+            </tr>
+
+            <tbody class="myTable2">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="403" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable3">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="500" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable4">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="Duration_1" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable5">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="Duration_2" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable6">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="Duration_3" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable7">
+                
+            </tbody>
+        </table>
+    </div>
+     <div id="Duration_4" class="tabcontent">
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th></th>
+                <th>URL</th>
+                <th></th>
+                <th></th>
+                <th>totalUser</th>
+                <th>totalRequest</th>
+                <th>MaxDuration</th>
+                <th>totalDuration</th>
+
+            </tr>
+
+            <tbody class="myTable8">
+                
+            </tbody>
+        </table>
+    </div>
+
+        <script>
+
+//switch drop-down list           
+            // buildTable(myArray404,"myTable1");
+            buildTable(myArray404_Prod,"myTable2");
+            buildTable(myArray403_Prod,"myTable3");
+            buildTable(myArray500_Prod,"myTable4");
+            buildTable(myArrayDuration_1_Prod,"myTable5");
+            buildTable(myArrayDuration_2_Prod,"myTable6");
+            buildTable(myArrayDuration_3_Prod,"myTable7");
+            buildTable(myArrayDuration_4_Prod,"myTable8");
+
+
+            $("button").click(function() {
+
+                let fired_button = $(this).val();
+
+                let arrayClass = fired_button.split(',');
+
+                $('.'+arrayClass[0]).toggle();
+                
+                let elem1 = document.getElementsByClassName(arrayClass[1])[0];
+                let theCSSprop1 = window.getComputedStyle(elem1,null).getPropertyValue("display");
+
+                let elem2 = document.getElementsByClassName(arrayClass[2])[0];
+                let theCSSprop2 = window.getComputedStyle(elem2,null).getPropertyValue("display");
+
+                    if (theCSSprop1=='table-row'){
+                        $('.toggle.'+arrayClass[1]).toggle();
+                    }
+                    if (theCSSprop2=='table-row'){
+                        $('.toggle.'+arrayClass[2]).toggle();
+                    }       
+            });
+
+
+
+// create table
+            function buildTable(data2,myTable){
+                var table = document.getElementsByClassName(myTable)[0];
+                
+                for(var i = 0; i < data2.dataURL.length; i++){
+                    var row =   `<tr class="foo" id="b">
+                                    <!--<td><button class="" value="`+myTable+`b`+i+`,`+myTable+`d`+i+`,`+myTable+`c`+i+`">"+"</button></td>-->
+                                    <td><button class="" value="`+myTable+`b`+i+`,`+myTable+`d`+i+`,`+myTable+`c`+i+`">"+"</button></td>
+                                    <td>${data2.dataURL[i].URL}</td>
+                                    <th></th>
+                                    <th></th>
+                                    <td>${data2.dataURL[i].totalUser}</td>
+                                    <td>${data2.dataURL[i].count}</td>
+                                    <td>${data2.dataURL[i].maxDuration}</td>
+                                    <td>${data2.dataURL[i].totalDuration}</td>
+                                </tr>
+                              
+                                <thead><tr  class="bg-info toggle `+myTable+`b`+i+`">                                  
+                                    <th><button class="" value="`+myTable+`d`+i+`">"+"</button></th>
+                                    <th></th>
+                                    <th>User_id</th>
+                                    <th>CountRequest</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr></thead>  `
+                               
+                    table.innerHTML += row;
+
+
+
+                    for(var j = 0; j < data2.dataURL[i].user_id.length; j++){  
+                        var row = `<tr class="toggle `+myTable+`d`+i+`">
+                                            <td></td>
+                                            <th></th>
+                                            <td>${data2.dataURL[i].user_id[j][0]}</td>
+                                            <td>${data2.dataURL[i].user_id[j][1]}</td>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>`
+
+                        table.innerHTML += row;
+
+                    }              
+
+                    var row =`<thead><tr  class="bg-info toggle `+myTable+`b`+i+` ">  
+                                <th><button class="" value="`+myTable+`c`+i+`">"+"</button></th>
+                                <th>Data_id</th>
+                                <th>Method</th>
+                                <th>Response</th>
+                                <th>Duration</th>
+                                <th>Time</th>
+                                <th>DB_Duration</th>
+                                <th>DB_Queries</th>
+                              </tr><thead/>`
+
+                    table.innerHTML += row;
+
+                    for(var j = 0; j < data2.dataURL[i].data_id.length; j++){  
+                         var row =   `<tr class="toggle `+myTable+`c`+i+`">
+                                        <td></td>
+                                        <td><a href="https://lp.driveroo.com/driveroo/admin/clockwork/${data2.dataURL[i].data_id[j][0]}" target="_blank">${data2.dataURL[i].data_id[j][0]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][1]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][2]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][3]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][4]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][5]}</td>
+                                       <td>${data2.dataURL[i].data_id[j][6]}</td>
+                                    </tr>`
+
+                    table.innerHTML += row;
+
+                    }            
+                }
+            }
+
+// tab
+            function openCity(evt, Name) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(Name).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+
+// sort
+
+            // document.addEventListener('DOMContentLoaded', () => {
+
+            //     const getSort = ({ target }) => {
+            //         console.log(JSON.stringify(target));
+            //         const order = (target.dataset.order = -(target.dataset.order || -1));
+            //         const index = [...target.parentNode.cells].indexOf(target);
+            //         const collator = new Intl.Collator(['en', 'ru'], { numeric: true });
+            //         const comparator = (index, order) => (a, b) => order * collator.compare(
+            //             a.children[index].innerHTML,
+            //             b.children[index].innerHTML
+            //         );
+                    
+            //         for(const tBody of target.closest('table').tBodies)
+            //             tBody.append(...[...tBody.rows].sort(comparator(index, order)));
+
+            //         for(const cell of target.parentNode.cells)
+            //             cell.classList.toggle('sorted', cell === target);
+            //     };
+                
+            //     document.querySelectorAll('.table_sort thead').forEach(tableTH => tableTH.addEventListener('click', () => getSort(event)));
+                
+            // });
+
+        </script>
+</body>
+</html>
