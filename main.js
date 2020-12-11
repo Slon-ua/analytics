@@ -33,12 +33,12 @@ function sleep(ms) {
 // fileHandler2();
 
 
-// let qwe = path.join(__dirname, "helpers", "../../../jobs/Analytics/builds/"+process.env.BUILD_NUMBER+"/log");
-// data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
-//       if (err) {
-//         throw err;
-//       }
-// });
+let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
+data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+      if (err) {
+        throw err;
+      }
+});
 
 // let qwe = path.join(__dirname, "helpers", "../../consoleText2.txt");
 // data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
@@ -47,12 +47,12 @@ function sleep(ms) {
 //       }
 // });
 
-let qwe = path.join(__dirname, "helpers", "../consoleText2.txt");
-data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
-      if (err) {
-        throw err;
-      }
-});
+// let qwe = path.join(__dirname, "helpers", "../consoleText2.txt");
+// data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
+//       if (err) {
+//         throw err;
+//       }
+// });
 
   
   console.log("_______________________________ 2 ");
