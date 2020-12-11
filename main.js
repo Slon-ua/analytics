@@ -33,7 +33,7 @@ function sleep(ms) {
 // fileHandler2();
 
 
-let qwe = path.join(__dirname, "helpers", "../../../jobs/Analytics/builds/"+process.env.BUILD_NUMBER+"/log");
+let qwe = path.join(__dirname, "helpers", "../../../jobs/analytics/builds/"+process.env.BUILD_NUMBER+"/log");
 data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
       if (err) {
         throw err;
