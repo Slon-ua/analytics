@@ -47,7 +47,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 //       }
 // });
 
-// let qwe = path.join(__dirname, "helpers", "../consoleText2.txt");
+// let qwe = path.join(__dirname, "helpers", "../consoleText1.txt");
 // data = fs.readFileSync( qwe, 'utf8', function (err, data) {   
 //       if (err) {
 //         throw err;
@@ -416,7 +416,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
          // sleep(2000);
          
-               console.log("___________PROD________________ 2.9 ");
+ /*              console.log("___________PROD________________ 2.9 ");
 
 
        var text9 ="{\""+ data.split("}'")[9].split("{\\n \"")[1] +"}" 
@@ -695,7 +695,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
 
          // sleep(2000);
-
+*/
 console.log("_______________________________ 3 ");
 
      // console.log(data1);
@@ -864,7 +864,7 @@ else{fileHandlerSand("myArray403",data403);}
                  sleep(5000);
 
 
-
+/*
 //!!!!!!!!!!!!!!! PROD !!!!!!!!!
 
 if (!data500_Prod.dataMethod.length){
@@ -922,7 +922,7 @@ else{fileHandlerProd("myArray403_Prod",data403_Prod);}
         else{fileHandlerProd("myArrayDuration_4_Prod",dataDuration4_Prod);}
                  sleep(5000);
 
-
+*/
 
 // fileHandler3("myArrayAll",dataAll);
 
