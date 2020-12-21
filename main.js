@@ -62,7 +62,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
      // let text ="{"+ data.split("] }\n ")[0].split("│ {")[1] +" ] }" ;
 
-     let text ="{\""+ data.split("}'")[0].split("{\\n \"")[1] +"}" ;
+     let text ="{\""+ data.split("\\n}")[0].split("{\\n \"")[1] +"}" ;
 
      // console.log(text);
                // sleep(5000);
@@ -122,7 +122,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
       // var text2 ="{"+ data.split("] }\n ")[1].split("│ {")[1] +" ] }";   
 
-      var text2 ="{\""+ data.split("}'")[1].split("{\\n \"")[1] +"}" ;      
+      var text2 ="{\""+ data.split("\\n}")[1].split("{\\n \"")[1] +"}" ;      
   
   // console.log(text2);
       // console.log(data.split("} ] }")[1]);
@@ -166,7 +166,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
        // var text3 ="{"+ data.split("] }\n ")[2].split("│ {")[1] +" ] }" ;
 
-       var text3 ="{\""+ data.split("}'")[2].split("{\\n \"")[1] +"}" ;
+       var text3 ="{\""+ data.split("\\n}")[2].split("{\\n \"")[1] +"}" ;
 
       // console.log(text3);
       // console.log(data.split("} ] }")[2]);
@@ -205,7 +205,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
 
        // var text4 ="{"+ data.split("] }\n ")[3].split("│ {")[1] +" ] }" ;  
 
-       var text4 ="{\""+ data.split("}'")[3].split("{\\n \"")[1] +"}" ;
+       var text4 ="{\""+ data.split("\\n}")[3].split("{\\n \"")[1] +"}" ;
 
       // console.log(text4);
       // console.log(data.split("} ] }")[2]);
@@ -241,7 +241,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.5 ");
 
 
-       var text5 ="{\""+ data.split("}'")[4].split("{\\n \"")[1] +"}" ;        
+       var text5 ="{\""+ data.split("\\n}")[4].split("{\\n \"")[1] +"}" ;        
        // var text5 ="{"+ data.split("{\\n \"")[0] +" ] }" ;        
        // var text5 ="{"+ data.split("]\\n}")[0]+" ] }" ;        
        // console.log(text5);
@@ -293,7 +293,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.6 ");
 
 
-       var text6 ="{\""+ data.split("}'")[5].split("{\\n \"")[1] +"}" 
+       var text6 ="{\""+ data.split("\\n}")[5].split("{\\n \"")[1] +"}" 
 
         // text6 =util.inspect("{"+ data.split("] }\n ")[5].split("│ {")[1] +" ] }", {'maxArrayLength': null})       
       // console.log(text6);
@@ -338,7 +338,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
      console.log("_______________________________ 2.7 ");
 
 
-       var text7 ="{\""+ data.split("}'")[6].split("{\\n \"")[1] +"}" 
+       var text7 ="{\""+ data.split("\\n}")[6].split("{\\n \"")[1] +"}" 
       // console.log(text7);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -378,7 +378,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
       console.log("_______________________________ 2.8 ");
 
 
-       var text8 ="{\""+ data.split("}'")[7].split("{\\n \"")[1] +"}" 
+       var text8 ="{\""+ data.split("\\n}")[7].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -419,7 +419,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
  /*              console.log("___________PROD________________ 2.9 ");
 
 
-       var text9 ="{\""+ data.split("}'")[9].split("{\\n \"")[1] +"}" 
+       var text9 ="{\""+ data.split("\\n}")[9].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -459,7 +459,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
                console.log("___________PROD________________ 2.10 ");
 
 
-       var text10 ="{\""+ data.split("}'")[10].split("{\\n \"")[1] +"}" 
+       var text10 ="{\""+ data.split("\\n}")[10].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -499,7 +499,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
                console.log("___________PROD________________ 2.11 ");
 
 
-       var text11 ="{\""+ data.split("}'")[11].split("{\\n \"")[1] +"}" 
+       var text11 ="{\""+ data.split("\\n}")[11].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -539,7 +539,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
                console.log("___________PROD________________ 2.12 ");
 
 
-       var text12 ="{\""+ data.split("}'")[12].split("{\\n \"")[1] +"}" 
+       var text12 ="{\""+ data.split("\\n}")[12].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -579,7 +579,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
                console.log("___________PROD________________ 2.13 ");
 
 
-       var text13 ="{\""+ data.split("}'")[13].split("{\\n \"")[1] +"}" 
+       var text13 ="{\""+ data.split("\\n}")[13].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -619,7 +619,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
                console.log("___________PROD________________ 2.14 ");
 
 
-       var text14 ="{\""+ data.split("}'")[14].split("{\\n \"")[1] +"}" 
+       var text14 ="{\""+ data.split("\\n}")[14].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
@@ -659,7 +659,7 @@ data = fs.readFileSync( qwe, 'utf8', function (err, data) {
                console.log("___________PROD________________ 2.15 ");
 
 
-       var text15 ="{\""+ data.split("}'")[15].split("{\\n \"")[1] +"}" 
+       var text15 ="{\""+ data.split("\\n}")[15].split("{\\n \"")[1] +"}" 
       // console.log(text8);
       // console.log(data.split("} ] }")[2]);
       // console.log(data.split("│ {")[4]);
